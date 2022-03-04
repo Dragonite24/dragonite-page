@@ -41,7 +41,8 @@ export const GlobalStyles = createGlobalStyle`
   #root {
     position: relative;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    min-height: 100vh;
     overflow: hidden;
     transition: filter .3s linear;
   }

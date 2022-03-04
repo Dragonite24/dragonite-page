@@ -1,6 +1,9 @@
 export const theme = {
   palette: {
     white: '#FFFFFF',
+    red: '#B61032',
+    dark_grey: '#1d1d1d',
+    grey: '#333333',
     black: '#000000'
   },
   fontFamily: {
