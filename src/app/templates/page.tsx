@@ -2,9 +2,6 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import { Header } from './header'
-import { Footer } from './footer'
-
 const Content = styled.main`
   position: relative;
   display: flex;
@@ -14,10 +11,4 @@ const Content = styled.main`
   height: 100vh;
 `
 
-export const Page: React.FC = ({ children }) => (
-  <>
-    <Header />
-    <Content>{children}</Content>
-    <Footer />
-  </>
-)
+export const Page: React.FC = ({ children }) => <Content>{children}</Content>

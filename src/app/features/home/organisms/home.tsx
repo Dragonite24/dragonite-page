@@ -1,21 +1,54 @@
+import { NAVIGATION_TILES } from 'app/data'
 import React from 'react'
-import { Text } from 'ui/components'
-import { styled, theme } from 'ui/styles'
-import { GradientHeader } from '../atoms'
-import { AboutMeSection } from '../molecules'
+import { connect } from 'react-redux'
+import { RootState } from 'root-reducer'
+import { setActiveSection } from 'store/sections/actions'
+
+import { styled } from 'ui/styles'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  scroll-behavior: smooth;
 `
 
-export const HomeContent: React.FC = () => {
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100vh;
+  color: #000;
+  border: 2px solid #000;
+`
+
+export const HomeContainer: React.FC<HomeContainerProps> = ({ activeSection }) => {
+  const sections = [1, 2, 3, 4]
+
+  React.useLayoutEffect(() => {
+    NAVIGATION_TILES[activeSection ?? 0].tileRef.current!.scrollIntoView({ behavior: 'smooth' })
+  }, [activeSection])
+
   return (
     <Wrapper>
-      <GradientHeader />
-      <AboutMeSection />
-      <Text variant="t0" color={theme.palette.black}></Text>
+      {sections.map((section, i) => (
+        <Box key={i} ref={NAVIGATION_TILES[i].tileRef}>
+          {NAVIGATION_TILES[i].title}
+        </Box>
+      ))}
     </Wrapper>
   )
 }
+
+type HomeContainerProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
+
+const mapStateToProps = (state: RootState) => ({
+  activeSection: state.popup.activeSection
+})
+
+const mapDispatchToProps = (dispatch: any) => ({
+  setActiveProject: (id: number) => dispatch(setActiveSection(id))
+})
+
+export const HomeContent = connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
