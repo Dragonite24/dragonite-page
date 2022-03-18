@@ -1,10 +1,11 @@
-import { NAVIGATION_TILES } from 'app/data'
 import React from 'react'
 import { connect } from 'react-redux'
 import { RootState } from 'root-reducer'
+
 import { setActiveSection } from 'store/sections/actions'
-import { styled, theme } from 'ui/styles'
-import useOnScreen from '../hooks/useOnScreen'
+import { styled } from 'ui/styles'
+import { NAVIGATION_TILES } from 'app/data'
+
 import { NavigationTile } from '../molecules'
 
 const Wrapper = styled.nav`
@@ -12,7 +13,7 @@ const Wrapper = styled.nav`
   position: fixed;
   flex-direction: column;
   justify-content: center;
-  width: 100px;
+  width: 130px;
   height: 100%;
   left: 0;
   z-index: 1;
@@ -22,15 +23,6 @@ const TilesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  opacity: 0.5;
-
-  transition: opacity ${theme.transition.hover}ms ease;
-
-  @media (hover: hover) {
-    &:hover {
-      opacity: 1;
-    }
-  }
 `
 
 const SidebarContainer: React.FC<ContainerProps> = ({ activeSection, setActiveSection }) => {
@@ -67,6 +59,7 @@ const SidebarContainer: React.FC<ContainerProps> = ({ activeSection, setActiveSe
           return (
             <NavigationTile
               key={i}
+              index={i}
               title={tile.title}
               isActive={activeSection === i}
               onClick={() => handleTileClick(i)}

@@ -1,1 +1,1 @@
-export { AboutMeSection } from './about-me-section'
+export { HeaderSection } from './header'

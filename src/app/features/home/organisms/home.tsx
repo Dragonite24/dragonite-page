@@ -6,6 +6,8 @@ import { setActiveSection } from 'store/sections/actions'
 
 import { styled } from 'ui/styles'
 
+import { HeaderSection } from '../molecules'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,6 +34,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = ({ activeSection }) =
 
   return (
     <Wrapper>
+      <HeaderSection ref={NAVIGATION_TILES[0].tileRef} />
       {sections.map((section, i) => (
         <Box key={i} ref={NAVIGATION_TILES[i].tileRef}>
           {NAVIGATION_TILES[i].title}
