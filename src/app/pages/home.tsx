@@ -1,12 +1,17 @@
 import React from 'react'
 
 import { Page } from 'app/templates'
-import { HomeContent } from 'app/features/home'
+import { SectionT } from 'nav-sections'
+import { Home } from 'app/features/home'
 
-export const Home: React.FC = () => {
+type HomeProps = {
+  sections: SectionT[]
+}
+
+export const HomePage: React.FC<HomeProps> = ({ sections }) => {
   return (
     <Page>
-      <HomeContent />
+      <Home sections={sections} />
     </Page>
   )
 }

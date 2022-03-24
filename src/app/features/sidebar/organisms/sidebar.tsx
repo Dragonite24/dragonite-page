@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { RootState } from 'root-reducer'
 
+import { SectionT } from 'nav-sections'
 import { setActiveSection } from 'store/sections/actions'
 import { styled } from 'ui/styles'
 import { NAVIGATION_TILES } from 'app/data'
@@ -24,48 +25,73 @@ const TilesWrapper = styled.div`
   flex-direction: column;
   height: auto;
 `
+type FX = {
+  startTime: number
+  duration: number
+  startScroll: number
+  endScroll: number
+}
 
-const SidebarContainer: React.FC<ContainerProps> = ({ activeSection, setActiveSection }) => {
-  const handleTileClick = (i: number) => {
-    setActiveSection(i)
-  }
+const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, setActiveSection }) => {
+  let fx: FX | null = null
 
-  const isActive = (ref: React.RefObject<HTMLDivElement>) => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log(entry)
+  React.useEffect(() => {
+    const handleScroll = (): void => {
+      if (fx) return
+      for (let i = sections.length - 1; i > 0; i--) {
+        const target = document.getElementById(sections[i].id)!
 
-        if (entry.isIntersecting) {
-          return true
+        if (window.scrollY >= target.offsetTop - target.offsetHeight / 2) {
+          setActiveSection(i)
+          return
         }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
       }
-    )
-    if (ref.current) {
-      observer.observe(ref.current)
+      setActiveSection(0)
     }
+
+    // clean up code
+    window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [fx, sections, setActiveSection])
+
+  const handleNewAnimationFrame = (): void => {
+    const now = Date.now()
+    const timePos = Math.min(1, (now - fx!.startTime) / fx!.duration)
+    const scrollPos = 1 - Math.pow(1 - timePos, 3) // easing
+    const scroll = fx!.startScroll + (fx!.endScroll - fx!.startScroll) * scrollPos
+    window.scrollTo({ top: scroll })
+
+    if (timePos === 1) {
+      fx = null
+    } else {
+      window.requestAnimationFrame(handleNewAnimationFrame)
+    }
+  }
+  const goto = (i: number): void => {
+    const id = sections[i].id
+    const target = document.getElementById(id)!
+
+    if (!fx) {
+      window.requestAnimationFrame(handleNewAnimationFrame)
+    }
+
+    fx = {
+      startTime: Date.now(),
+      duration: 700,
+      startScroll: window.scrollY,
+      endScroll: target.offsetTop
+    }
+
+    setActiveSection(i)
   }
 
   return (
     <Wrapper>
       <TilesWrapper>
-        {NAVIGATION_TILES.map((tile, i) => {
-          console.log(isActive(tile.tileRef))
-
-          return (
-            <NavigationTile
-              key={i}
-              index={i}
-              title={tile.title}
-              isActive={activeSection === i}
-              onClick={() => handleTileClick(i)}
-            />
-          )
-        })}
+        {NAVIGATION_TILES.map((tile, i) => (
+          <NavigationTile key={i} index={i} title={tile.title} isActive={activeSection === i} onClick={() => goto(i)} />
+        ))}
       </TilesWrapper>
     </Wrapper>
   )
@@ -81,5 +107,9 @@ const mapDispatchToProps = (dispatch: any) => ({
 })
 
 export type ContainerProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
+
+type SidebarProps = {
+  sections: SectionT[]
+} & ContainerProps
 
 export const Sidebar = connect(mapStateToProps, mapDispatchToProps)(SidebarContainer)

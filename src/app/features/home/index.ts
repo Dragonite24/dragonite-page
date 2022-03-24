@@ -1,1 +1,1 @@
-export { HomeContent } from './organisms'
+export { Home } from './organisms'

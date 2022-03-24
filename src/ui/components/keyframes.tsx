@@ -109,3 +109,15 @@ export const glitchSecond = keyframes`
     opacity: 0.25;
   }
 `
+
+export const rotateItem = keyframes`
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(180deg) scale(3);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+`

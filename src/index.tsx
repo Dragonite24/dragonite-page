@@ -9,7 +9,8 @@ import { configureStore } from 'configure-store'
 
 import { GlobalStyles, theme, ThemeProvider } from 'ui/styles'
 import { Sidebar } from 'app/features/sidebar'
-import { Home } from 'app/pages'
+import { HomePage } from 'app/pages'
+import { sections } from 'nav-sections'
 
 const history = createBrowserHistory()
 const store = configureStore(history)
@@ -19,8 +20,8 @@ const Root: React.FC = () => (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <ConnectedRouter history={history}>
-        <Sidebar />
-        <Switch>{<Home />}</Switch>
+        <Sidebar sections={sections} />
+        <Switch>{<HomePage sections={sections} />}</Switch>
       </ConnectedRouter>
     </ThemeProvider>
   </ReduxProvider>
