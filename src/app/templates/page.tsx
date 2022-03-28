@@ -9,6 +9,7 @@ const Content = styled.main`
   flex: 1 0;
   align-items: center;
   height: 100vh;
+  overflow: auto;
 `
 
 export const Page: React.FC = ({ children }) => <Content>{children}</Content>

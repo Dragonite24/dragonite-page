@@ -26,10 +26,6 @@ const Box = styled.section`
 `
 
 export const HomeContainer: React.FC<HomeContainerProps> = ({ sections, activeSection }) => {
-  React.useEffect(() => {
-    NAVIGATION_TILES[activeSection].tileRef.current!.scrollIntoView({ behavior: 'smooth' })
-  }, [activeSection])
-
   return (
     <Wrapper>
       {NAVIGATION_TILES.map((section, i) => (

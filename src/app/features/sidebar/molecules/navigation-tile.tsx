@@ -1,7 +1,6 @@
 import React from 'react'
 import { CSSTransition, Transition } from 'react-transition-group'
 
-import { Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
 import { ReactComponent as Home } from 'ui/icons/home.svg'
@@ -9,92 +8,50 @@ import { ReactComponent as User } from 'ui/icons/user.svg'
 import { ReactComponent as Exp } from 'ui/icons/experience.svg'
 import { ReactComponent as Email } from 'ui/icons/email.svg'
 
-const StyledText = styled(Text)`
-  margin-left: 16px;
-`
-
 const Wrapper = styled.section<{ isActive: boolean; isPointed: boolean }>`
   display: flex;
   position: relative;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: ${({ isPointed }) => (isPointed ? '100%' : '46px')};
+  width: 100%;
 
-  height: 40px;
-  opacity: 0.6;
+  height: 80px;
 
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
   color: ${({ isActive }) => (isActive ? theme.palette.white : theme.palette.black)};
-  background-color: ${({ isActive }) => (isActive ? theme.palette.red : theme.palette.grey)};
+  background-color: ${({ isActive }) => (isActive ? theme.palette.dark_grey : theme.palette.grey)};
 
   transition: opacity, color, background-color, ${theme.transition.hover}ms ease;
-
-  :not(:last-child) {
-    margin-bottom: 8px;
-  }
 
   @media (hover: hover) {
     &:hover {
       opacity: 1;
-      background-color: ${theme.palette.red};
+      background-color: ${theme.palette.green};
       color: ${theme.palette.white};
     }
   }
 
-  &.tile-enter ${StyledText} {
-    opacity: 0;
-  }
-  &.tile-enter-done ${StyledText} {
-    opacity: 1;
-    transition: opacity 200ms;
-  }
-  &.tile-exit ${StyledText} {
-    opacity: 0;
+  :after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background-color: ${theme.palette.white};
+    width: 2px;
+    right: 0px;
+    opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+    transition: opacity, ${theme.transition.hover}ms ease;
   }
 `
 
 const IconWrapper = styled.div`
   display: flex;
-  position: absolute;
   right: 8px;
-  width: 32px;
-  height: 32px;
   justify-content: center;
   align-items: center;
-`
 
-const HomeIcon = styled(Home)`
-  display: flex;
-
-  & > path {
-    stroke: ${theme.palette.black};
-    color: ${theme.palette.black};
-  }
-`
-
-const AboutMeIcon = styled(User)`
-  display: flex;
-
-  & > path {
-    stroke: ${theme.palette.black};
-    color: ${theme.palette.black};
-  }
-`
-const ExpIcon = styled(Exp)`
-  display: flex;
-
-  & > path {
-    stroke: ${theme.palette.black};
-    color: ${theme.palette.black};
-  }
-`
-const ContactIcon = styled(Email)`
-  display: flex;
-
-  & > path {
-    stroke: ${theme.palette.black};
-    color: ${theme.palette.black};
+  & path {
+    stroke: ${theme.palette.white};
+    color: ${theme.palette.white};
   }
 `
 
@@ -108,7 +65,7 @@ type NavigationTileProps = {
 export const NavigationTile: React.FC<NavigationTileProps> = ({ title, index, isActive, onClick }) => {
   const [isPointed, setIsPointed] = React.useState(false)
 
-  const navIcons = [<HomeIcon />, <AboutMeIcon />, <ExpIcon />, <ContactIcon />]
+  const navIcons = [<Home />, <User />, <Exp />, <Email />]
 
   const handleMouseEnter = () => {
     setIsPointed(true)
@@ -117,7 +74,7 @@ export const NavigationTile: React.FC<NavigationTileProps> = ({ title, index, is
     setIsPointed(false)
   }
   return (
-    <CSSTransition in={isPointed} timeout={theme.transition.hover} classNames="tile">
+    <CSSTransition in={isPointed} timeout={theme.transition.hover} classNames="icon">
       <Wrapper
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -125,15 +82,9 @@ export const NavigationTile: React.FC<NavigationTileProps> = ({ title, index, is
         isPointed={isPointed}
         onClick={onClick}
       >
-        <Transition in={isPointed} timeout={theme.transition.hover} mountOnEnter unmountOnExit>
-          {(state) => (
-            <StyledText variant="t1" align="center">
-              {title}
-            </StyledText>
-          )}
+        <Transition in={isPointed} timeout={theme.transition.hover}>
+          <IconWrapper>{navIcons[index]}</IconWrapper>
         </Transition>
-
-        <IconWrapper>{navIcons[index]}</IconWrapper>
       </Wrapper>
     </CSSTransition>
   )

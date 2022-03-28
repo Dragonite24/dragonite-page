@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${theme.palette.red};
+    background-color: ${theme.palette.green};
     border-radius: 8px;
   }
 

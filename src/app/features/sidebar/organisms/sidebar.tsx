@@ -4,20 +4,29 @@ import { RootState } from 'root-reducer'
 
 import { SectionT } from 'nav-sections'
 import { setActiveSection } from 'store/sections/actions'
-import { styled } from 'ui/styles'
+import { styled, theme } from 'ui/styles'
 import { NAVIGATION_TILES } from 'app/data'
 
-import { NavigationTile } from '../molecules'
+import { ContactsBar, LogoIcon, NavigationTile } from '../molecules'
 
 const Wrapper = styled.nav`
   display: flex;
   position: fixed;
   flex-direction: column;
-  justify-content: center;
-  width: 130px;
+  justify-content: space-between;
+  background-color: ${theme.palette.grey};
+  width: 50px;
   height: 100%;
   left: 0;
   z-index: 1;
+
+  transition: width, ${theme.transition.hover}ms ease;
+
+  @media (hover: hover) {
+    &:hover {
+      width: 80px;
+    }
+  }
 `
 
 const TilesWrapper = styled.div`
@@ -36,6 +45,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
   let fx: FX | null = null
 
   React.useEffect(() => {
+    console.log(1)
     const handleScroll = (): void => {
       if (fx) return
       for (let i = sections.length - 1; i > 0; i--) {
@@ -88,11 +98,13 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
 
   return (
     <Wrapper>
+      <LogoIcon />
       <TilesWrapper>
         {NAVIGATION_TILES.map((tile, i) => (
           <NavigationTile key={i} index={i} title={tile.title} isActive={activeSection === i} onClick={() => goto(i)} />
         ))}
       </TilesWrapper>
+      <ContactsBar />
     </Wrapper>
   )
 }

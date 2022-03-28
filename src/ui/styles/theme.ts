@@ -1,10 +1,11 @@
 export const theme = {
   palette: {
-    white: '#FFFFFF',
-    red: '#B61032',
-    dark_grey: '#1d1d1d',
-    grey: '#cacaca',
-    black: '#000000'
+    white: '#ffffff',
+    black: '#000000',
+    grey: '#242b36',
+    dark_grey: '#1d232c',
+    dark_blue: '#141a24',
+    green: '#1ba94c'
   },
   fontFamily: {
     montserrat: 'Montserrat'
