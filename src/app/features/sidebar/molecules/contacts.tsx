@@ -44,7 +44,7 @@ export const ContactsBar: React.FC = () => {
   return (
     <Wrapper>
       {contactLinks.map((contact, i) => (
-        <IconLink href={contact.link} target="_blank">
+        <IconLink key={i} href={contact.link} target="_blank">
           <ContactIcon key={i} name={`contacts/${contact.title}.webp`} height="24px" alt={contact.title} />
         </IconLink>
       ))}

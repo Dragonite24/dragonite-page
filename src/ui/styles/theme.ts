@@ -14,6 +14,11 @@ export const theme = {
     hover: 200
   },
   typography: {
+    h0: {
+      fontSize: '52px',
+      lineHeight: '60px',
+      fontWeight: 'bold'
+    },
     h1: {
       fontSize: '40px',
       lineHeight: '56px',

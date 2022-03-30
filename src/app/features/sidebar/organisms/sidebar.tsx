@@ -45,7 +45,6 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
   let fx: FX | null = null
 
   React.useEffect(() => {
-    console.log(1)
     const handleScroll = (): void => {
       if (fx) return
       for (let i = sections.length - 1; i > 0; i--) {

@@ -20,7 +20,7 @@ const Box = styled.section`
   flex-direction: column;
   scroll-behavior: smooth;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   color: #000;
   border: 2px solid #000;
 `

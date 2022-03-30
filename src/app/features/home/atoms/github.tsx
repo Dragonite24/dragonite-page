@@ -1,0 +1,36 @@
+import { breakpoints } from 'app/shared/dimensions'
+import React from 'react'
+
+import { Image } from 'ui/components'
+import { styled, theme } from 'ui/styles'
+
+const Wrapper = styled.div`
+  display: flex;
+  height: 100%;
+  width: 33%;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  @media (max-width: ${breakpoints.desktop}px) {
+    align-items: flex-start;
+    width: 100%;
+  }
+`
+
+const GitHubBox = styled.a`
+  display: flex;
+  width: 160px;
+  height: 160px;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${theme.palette.green};
+`
+
+export const GitHubBlock: React.FC = () => (
+  <Wrapper>
+    <GitHubBox>
+      <Image name="github-logo-big.webp" width="64" height="64" />
+    </GitHubBox>
+  </Wrapper>
+)
