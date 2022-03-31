@@ -4,6 +4,7 @@ export const theme = {
     black: '#000000',
     grey: '#242b36',
     dark_grey: '#1d232c',
+    light_grey: '#9f9f9f',
     dark_blue: '#141a24',
     green: '#1ba94c'
   },
@@ -38,6 +39,11 @@ export const theme = {
       fontSize: '14px',
       lineHeight: '20px',
       fontWeight: 'normal'
+    },
+    t0_bold: {
+      fontSize: '14px',
+      lineHeight: '20px',
+      fontWeight: 'bold'
     },
     t1: {
       fontSize: '16px',

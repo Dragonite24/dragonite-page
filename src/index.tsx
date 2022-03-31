@@ -10,15 +10,17 @@ import { configureStore } from 'configure-store'
 import { DimensionsProvider, useDimensions } from 'app/shared/dimensions'
 import { GlobalStyles, theme, ThemeProvider } from 'ui/styles'
 import { Sidebar } from 'app/features/sidebar'
+
 import { HomePage } from 'app/pages'
 import { sections } from 'nav-sections'
+import { Header } from 'app/features/navbar'
 
 const history = createBrowserHistory()
 const store = configureStore(history)
 
 const Root: React.FC = () => {
   const { type } = useDimensions()
-  const isMobile = type === 'mobile'
+  const isNotDesktop = type === 'original' || type === 'desktop'
 
   return (
     <ReduxProvider store={store}>
@@ -26,7 +28,7 @@ const Root: React.FC = () => {
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <ConnectedRouter history={history}>
-            {!isMobile && <Sidebar sections={sections} />}
+            {isNotDesktop ? <Sidebar sections={sections} /> : <Header />}
             <Switch>{<HomePage sections={sections} />}</Switch>
           </ConnectedRouter>
         </ThemeProvider>

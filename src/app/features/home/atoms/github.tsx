@@ -29,7 +29,7 @@ const GitHubBox = styled.a`
 
 export const GitHubBlock: React.FC = () => (
   <Wrapper>
-    <GitHubBox>
+    <GitHubBox href="https://github.com/Dragonite24" target="_blank">
       <Image name="github-logo-big.webp" width="64" height="64" />
     </GitHubBox>
   </Wrapper>

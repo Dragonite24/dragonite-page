@@ -22,7 +22,7 @@ const Box = styled.section`
   width: 100%;
   min-height: 100vh;
   color: #000;
-  border: 2px solid #000;
+  /* border: 2px solid #000; */
 `
 
 export const HomeContainer: React.FC<HomeContainerProps> = ({ sections, activeSection }) => {
