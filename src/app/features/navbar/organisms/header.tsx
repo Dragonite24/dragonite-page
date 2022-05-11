@@ -5,7 +5,6 @@ import { styled, theme } from 'ui/styles'
 
 const Wrapper = styled.header`
   display: flex;
-  position: absolute;
   top: 0;
   flex-direction: row;
   width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'ui/components'
 
-import { styled } from 'ui/styles'
+import { styled, theme } from 'ui/styles'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,6 +22,11 @@ const IconLink = styled.a`
 
 const ContactIcon = styled(Image)`
   filter: grayscale(1);
+  transition: filter ${theme.transition.hover}ms ease;
+
+  &:hover {
+    filter: grayscale(0);
+  }
 `
 
 type ContactT = {
@@ -29,25 +34,23 @@ type ContactT = {
   link: string
 }
 
-export const ContactsBar: React.FC = () => {
-  const contactLinks: ContactT[] = [
-    {
-      title: 'telegram-logo',
-      link: 'https://t.me/dragonite24'
-    },
-    {
-      title: 'github-logo',
-      link: 'https://github.com/Dragonite24'
-    }
-  ]
+const contactLinks: ContactT[] = [
+  {
+    title: 'telegram-logo',
+    link: 'https://t.me/dragonite24'
+  },
+  {
+    title: 'github-logo',
+    link: 'https://github.com/Dragonite24'
+  }
+]
 
-  return (
-    <Wrapper>
-      {contactLinks.map((contact, i) => (
-        <IconLink key={i} href={contact.link} target="_blank">
-          <ContactIcon key={i} name={`contacts/${contact.title}.webp`} height="24px" alt={contact.title} />
-        </IconLink>
-      ))}
-    </Wrapper>
-  )
-}
+export const ContactsBar: React.FC = () => (
+  <Wrapper>
+    {contactLinks.map((contact, i) => (
+      <IconLink key={i} href={contact.link} target="_blank">
+        <ContactIcon key={i} name={`contacts/${contact.title}.webp`} height="24px" alt={contact.title} />
+      </IconLink>
+    ))}
+  </Wrapper>
+)

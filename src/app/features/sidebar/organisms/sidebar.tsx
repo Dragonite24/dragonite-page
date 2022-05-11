@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'root-reducer'
 
 import { SectionT } from 'nav-sections'
@@ -41,7 +41,16 @@ type FX = {
   endScroll: number
 }
 
-const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, setActiveSection }) => {
+type SidebarProps = {
+  sections: SectionT[]
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ sections }) => {
+  const dispatch = useDispatch()
+
+  const isPopupOpen = useSelector((state: RootState) => state.popup.isOpen)
+  const activeSection = useSelector((state: RootState) => state.popup.activeSection)
+
   let fx: FX | null = null
 
   React.useEffect(() => {
@@ -51,18 +60,18 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
         const target = document.getElementById(sections[i].id)!
 
         if (window.scrollY >= target.offsetTop - target.offsetHeight / 2) {
-          setActiveSection(i)
+          dispatch(setActiveSection(i))
           return
         }
       }
-      setActiveSection(0)
+      dispatch(setActiveSection(0))
     }
 
     // clean up code
     window.removeEventListener('scroll', handleScroll)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [fx, sections, setActiveSection])
+  }, [dispatch, fx, sections])
 
   const handleNewAnimationFrame = (): void => {
     const now = Date.now()
@@ -92,7 +101,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
       endScroll: target.offsetTop
     }
 
-    setActiveSection(i)
+    dispatch(setActiveSection(i))
   }
 
   return (
@@ -107,20 +116,3 @@ const SidebarContainer: React.FC<SidebarProps> = ({ sections, activeSection, set
     </Wrapper>
   )
 }
-
-const mapStateToProps = (state: RootState) => ({
-  isPopupOpen: state.popup.isOpen,
-  activeSection: state.popup.activeSection
-})
-
-const mapDispatchToProps = (dispatch: any) => ({
-  setActiveSection: (activeSection: number) => dispatch(setActiveSection(activeSection))
-})
-
-export type ContainerProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
-
-type SidebarProps = {
-  sections: SectionT[]
-} & ContainerProps
-
-export const Sidebar = connect(mapStateToProps, mapDispatchToProps)(SidebarContainer)

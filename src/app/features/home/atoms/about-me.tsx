@@ -1,6 +1,6 @@
-import { breakpoints } from 'app/shared/dimensions'
 import React from 'react'
 
+import { breakpoints } from 'app/shared/dimensions'
 import { Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -121,7 +121,8 @@ const ContactIcon = styled(Mail)`
 `
 
 export const AboutMeBlock: React.FC = () => {
-  const web: string[] = ['Websites', 'Mobile Apps', 'Landing pages']
+  const webTips: string[] = ['Websites', 'Mobile Apps', 'Landing pages']
+
   return (
     <Wrapper>
       <AboutMeContent>
@@ -131,7 +132,7 @@ export const AboutMeBlock: React.FC = () => {
           Frontend Developer
         </Text>
         <StyledText variant="t0_bold" color={theme.palette.white}>
-          {web.join(' / ')}
+          {webTips.join(' / ')}
         </StyledText>
       </AboutMeContent>
       <FooterSectionBar>
@@ -156,7 +157,7 @@ export const AboutMeBlock: React.FC = () => {
                 Contact me
               </Text>
               <Text variant="t0_bold" color={theme.palette.grey}>
-                Я не придумал текст
+                To call for an interview or just to chat :)
               </Text>
             </TextWrapper>
           </SemiBlockWrapper>

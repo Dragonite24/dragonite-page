@@ -1,4 +1,4 @@
-import { BasedSection, HeaderSection } from 'app/features/home/molecules'
+import { AboutMeSection, BasedSection, HeaderSection, WorkExperienceSection } from 'app/features/home'
 
 export type SectionT = {
   id: string
@@ -7,7 +7,7 @@ export type SectionT = {
 
 export const sections: SectionT[] = [
   { id: 'id0', el: <HeaderSection /> },
-  { id: 'id1', el: <div /> },
-  { id: 'id2', el: <div /> },
+  { id: 'id1', el: <AboutMeSection /> },
+  { id: 'id2', el: <WorkExperienceSection /> },
   { id: 'id3', el: <BasedSection /> }
 ]

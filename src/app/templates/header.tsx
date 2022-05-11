@@ -1,6 +1,6 @@
 import React from 'react'
-import { GlitchEffect, Text } from 'ui/components'
 
+import { GlitchEffect, Text } from 'ui/components'
 import { styled } from 'ui/styles'
 
 const Wrapper = styled.header`

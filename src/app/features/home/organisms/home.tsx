@@ -1,10 +1,6 @@
 import React from 'react'
 
-import { connect } from 'react-redux'
-import { RootState } from 'root-reducer'
-
 import { SectionT } from 'nav-sections'
-import { setActiveSection } from 'store/sections/actions'
 import { NAVIGATION_TILES } from 'app/data'
 import { styled } from 'ui/styles'
 
@@ -22,30 +18,18 @@ const Box = styled.section`
   width: 100%;
   min-height: 100vh;
   color: #000;
-  /* border: 2px solid #000; */
 `
 
-export const HomeContainer: React.FC<HomeContainerProps> = ({ sections, activeSection }) => {
-  return (
-    <Wrapper>
-      {NAVIGATION_TILES.map((section, i) => (
-        <Box key={i} ref={NAVIGATION_TILES[i].tileRef} id={sections[i].id}>
-          {sections[i].el}
-        </Box>
-      ))}
-    </Wrapper>
-  )
+type Props = {
+  sections: SectionT[]
 }
 
-type HomeContainerProps = { sections: SectionT[] } & ReturnType<typeof mapStateToProps> &
-  ReturnType<typeof mapDispatchToProps>
-
-const mapStateToProps = (state: RootState) => ({
-  activeSection: state.popup.activeSection
-})
-
-const mapDispatchToProps = (dispatch: any) => ({
-  setActiveProject: (id: number) => dispatch(setActiveSection(id))
-})
-
-export const Home = connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+export const Home: React.FC<Props> = ({ sections }) => (
+  <Wrapper>
+    {NAVIGATION_TILES.map((section, i) => (
+      <Box key={i} ref={section.tileRef} id={sections[i].id}>
+        {sections[i].el}
+      </Box>
+    ))}
+  </Wrapper>
+)

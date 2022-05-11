@@ -1,6 +1,6 @@
-import { breakpoints } from 'app/shared/dimensions'
 import React from 'react'
 
+import { breakpoints } from 'app/shared/dimensions'
 import { Image } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -23,8 +23,13 @@ const GitHubBox = styled.a`
   height: 160px;
   align-items: center;
   justify-content: center;
-
   background-color: ${theme.palette.green};
+
+  transition: filter ${theme.transition.hover}ms ease;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
 `
 
 export const GitHubBlock: React.FC = () => (
