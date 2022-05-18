@@ -6,8 +6,8 @@ import './fonts.css'
 
 export const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
   }
 
   ::-webkit-scrollbar-thumb {

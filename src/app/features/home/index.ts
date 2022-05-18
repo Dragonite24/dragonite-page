@@ -1,2 +1,2 @@
-export { Home } from './organisms'
+export { Home } from './templates'
 export { HeaderSection, BasedSection, AboutMeSection, WorkExperienceSection } from './molecules'

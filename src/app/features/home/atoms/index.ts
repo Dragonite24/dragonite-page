@@ -1,3 +1,5 @@
 export { GradientHeader } from './gradient-header'
 export { AboutMeBlock } from './about-me'
 export { GitHubBlock } from './github'
+export { TabList } from './tab-list'
+export { TabPanel } from './tab-panel'

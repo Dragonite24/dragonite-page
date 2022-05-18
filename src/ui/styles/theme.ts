@@ -5,7 +5,10 @@ export const theme = {
     grey: '#242b36',
     dark_grey: '#1d232c',
     light_grey: '#9f9f9f',
+    extra_light_grey: '#f1f1f1',
     dark_blue: '#141a24',
+    hover_dark_blue: '#1e2838',
+    blue: '#4b6289',
     green: '#1ba94c'
   },
   fontFamily: {
