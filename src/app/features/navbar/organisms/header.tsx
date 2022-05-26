@@ -1,10 +1,12 @@
+import { useScrollDirection } from 'app/shared'
 import React from 'react'
 import { Text } from 'ui/components'
 
 import { styled, theme } from 'ui/styles'
 
-const Wrapper = styled.header`
+const Wrapper = styled.header<{ collapsed: boolean }>`
   display: flex;
+  position: fixed;
   top: 0;
   flex-direction: row;
   width: 100%;
@@ -27,8 +29,11 @@ const FCsText = styled(Text)`
 `
 
 export const Header: React.FC = () => {
+  const direction = useScrollDirection()
+  console.log(direction)
+
   return (
-    <Wrapper>
+    <Wrapper collapsed={direction === 'down'}>
       <Content>
         <FCsText variant="t0">Kolesnikov Semen</FCsText>
       </Content>

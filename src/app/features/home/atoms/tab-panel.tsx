@@ -5,14 +5,14 @@ import { Text } from 'ui/components'
 import { JOBS } from 'app/data/work-experience'
 
 import { styled, theme } from 'ui/styles'
+import { breakpoints } from 'app/shared'
 
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-  margin-left: 20px;
 
-  @media (max-width: 600px) {
-    margin-left: 0;
+  @media (max-width: ${breakpoints.mobile - 1}px) {
+    margin: 0px 20px;
   }
 `
 

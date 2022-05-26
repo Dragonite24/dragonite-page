@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { breakpoints } from 'app/shared/dimensions'
+import { breakpoints } from 'app/shared'
 import { Image } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: flex-end;
   justify-content: flex-end;
 
-  @media (max-width: ${breakpoints.desktop}px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     align-items: flex-start;
     width: 100%;
   }

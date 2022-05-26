@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { breakpoints } from 'app/shared/dimensions'
+import { breakpoints } from 'app/shared'
 import { Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -17,8 +17,8 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: ${theme.palette.dark_grey};
 
-  @media (max-width: ${breakpoints.desktop}px) {
-    margin-top: 32px;
+  @media (max-width: ${breakpoints.tablet}px) {
+    margin-top: 64px;
   }
 `
 
@@ -30,7 +30,7 @@ const AboutMeContent = styled.div`
   padding: 64px;
   transition: padding ${theme.transition.hover}ms linear;
 
-  @media (max-width: ${breakpoints.desktop}px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     padding: 32px;
   }
 
@@ -73,7 +73,7 @@ const SemiBlockWrapper = styled.div`
   align-items: center;
   transition: padding ${theme.transition.hover}ms linear;
 
-  @media (max-width: ${breakpoints.desktop}px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     padding: 0 32px;
   }
 

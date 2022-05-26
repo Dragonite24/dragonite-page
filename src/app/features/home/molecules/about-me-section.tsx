@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { breakpoints } from 'app/shared/dimensions'
+import { breakpoints } from 'app/shared'
 import { Image, Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -34,7 +34,7 @@ const Content = styled.div`
   width: 100%;
   z-index: 0;
 
-  @media (max-width: ${breakpoints.desktop}px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     flex-direction: column-reverse;
   }
 `

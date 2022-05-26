@@ -1,7 +1,7 @@
-import { breakpoints } from 'app/shared/dimensions'
 import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 
+import { breakpoints } from 'app/shared'
 import { Image } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -36,21 +36,19 @@ const Content = styled.div`
   width: 100%;
   z-index: 0;
 
-  @media (max-width: ${breakpoints.desktop}px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     flex-direction: column-reverse;
   }
 `
 
-export const HeaderSection: React.FC = () => {
-  return (
-    <CSSTransition timeout={theme.transition.hover} classNames="hello">
-      <Wrapper>
-        <BackgroundImage name="header-background.webp" width="100%" height="100%" fit="cover" />
-        <Content>
-          <GitHubBlock />
-          <AboutMeBlock />
-        </Content>
-      </Wrapper>
-    </CSSTransition>
-  )
-}
+export const HeaderSection: React.FC = () => (
+  <CSSTransition timeout={theme.transition.hover} classNames="hello">
+    <Wrapper>
+      <BackgroundImage name="header-background.webp" width="100%" height="100%" fit="cover" />
+      <Content>
+        <GitHubBlock />
+        <AboutMeBlock />
+      </Content>
+    </Wrapper>
+  </CSSTransition>
+)

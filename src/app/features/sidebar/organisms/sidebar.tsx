@@ -48,7 +48,6 @@ type SidebarProps = {
 export const Sidebar: React.FC<SidebarProps> = ({ sections }) => {
   const dispatch = useDispatch()
 
-  const isPopupOpen = useSelector((state: RootState) => state.popup.isOpen)
   const activeSection = useSelector((state: RootState) => state.popup.activeSection)
 
   let fx: FX | null = null

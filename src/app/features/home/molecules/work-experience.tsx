@@ -1,3 +1,4 @@
+import { breakpoints } from 'app/shared'
 import React, { useState } from 'react'
 
 import { Divider, Text } from 'ui/components'
@@ -34,7 +35,7 @@ const Content = styled.div`
 
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${breakpoints.mobile - 1}px) {
     flex-direction: column;
   }
 `
