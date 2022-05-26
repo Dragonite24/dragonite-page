@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dragonite-page/static/css/main.bb33a0e2.css",
-    "main.js": "/dragonite-page/static/js/main.6d247215.js",
+    "main.js": "/dragonite-page/static/js/main.7e5500f4.js",
     "static/media/header-gif.gif": "/dragonite-page/static/media/header-gif.7556e4bcce528bf6ccab.gif",
     "static/media/header-background.webp": "/dragonite-page/static/media/header-background.799caeb621245a0954f3.webp",
     "static/media/Montserrat-Regular.ttf": "/dragonite-page/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
@@ -17,10 +17,10 @@
     "static/media/mail.svg": "/dragonite-page/static/media/mail.3da62b0824c84e35775310e7b9bdf123.svg",
     "static/media/experience.svg": "/dragonite-page/static/media/experience.21e8d014ba982e33245b70ec423ebfcb.svg",
     "main.bb33a0e2.css.map": "/dragonite-page/static/css/main.bb33a0e2.css.map",
-    "main.6d247215.js.map": "/dragonite-page/static/js/main.6d247215.js.map"
+    "main.7e5500f4.js.map": "/dragonite-page/static/js/main.7e5500f4.js.map"
   },
   "entrypoints": [
     "static/css/main.bb33a0e2.css",
-    "static/js/main.6d247215.js"
+    "static/js/main.7e5500f4.js"
   ]
 }
