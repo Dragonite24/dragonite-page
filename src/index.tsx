@@ -26,7 +26,7 @@ const Root: React.FC = () => {
         <ScrollDirectionProvider>
           <GlobalStyles />
           <ConnectedRouter history={history}>
-            {isDesktop || isOriginal ? <Sidebar sections={sections} /> : <Header />}
+            {isDesktop || isOriginal ? <Sidebar /> : <Header />}
             <Switch>{<HomePage sections={sections} />}</Switch>
           </ConnectedRouter>
         </ScrollDirectionProvider>

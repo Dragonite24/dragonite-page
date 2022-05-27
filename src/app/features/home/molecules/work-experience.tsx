@@ -30,9 +30,9 @@ const Header = styled(Text)`
 const Content = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: flex-start;
-
+  min-height: 300px;
+  justify-content: flex-start;
   width: 100%;
 
   @media (max-width: ${breakpoints.mobile - 1}px) {

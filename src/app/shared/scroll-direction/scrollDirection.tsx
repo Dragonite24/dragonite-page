@@ -2,10 +2,10 @@ import { useCallback, useState, useEffect, createContext, useContext } from 'rea
 
 type TScrollDirection = 'down' | 'up'
 
-const ScrollDirectionContext = createContext<TScrollDirection>('down')
+const ScrollDirectionContext = createContext<TScrollDirection>('up')
 
 export const ScrollDirectionProvider: React.FC = ({ children }): JSX.Element => {
-  const [direction, setDirection] = useState<TScrollDirection>('down')
+  const [direction, setDirection] = useState<TScrollDirection>('up')
   const [y, setY] = useState<number>(window.scrollY)
 
   const handleNavigation = useCallback(

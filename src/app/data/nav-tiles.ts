@@ -6,13 +6,13 @@ const expRef = createRef<HTMLDivElement>()
 const basedRef = createRef<HTMLDivElement>()
 
 enum Tiles {
-  home = 'Главная',
-  aboutMe = 'Обо мне',
-  experience = 'Опыт',
-  based = 'База'
+  home = 'Home',
+  aboutMe = 'About Me',
+  experience = 'Experience',
+  based = 'Based'
 }
 
-type TilesT = {
+export type TilesT = {
   title: string
   tileRef: React.RefObject<HTMLDivElement>
 }

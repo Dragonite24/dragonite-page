@@ -5,15 +5,10 @@ import { Text } from 'ui/components'
 import { JOBS } from 'app/data/work-experience'
 
 import { styled, theme } from 'ui/styles'
-import { breakpoints } from 'app/shared'
 
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-
-  @media (max-width: ${breakpoints.mobile - 1}px) {
-    margin: 0px 20px;
-  }
 `
 
 const StyledTabPanel = styled.div<{ hidden: boolean }>`
@@ -21,7 +16,7 @@ const StyledTabPanel = styled.div<{ hidden: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px 5px;
+  padding: 10px;
 
   &.fade-enter {
     opacity: 0;

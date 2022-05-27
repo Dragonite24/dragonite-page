@@ -31,4 +31,5 @@ export const Image: ImageT = styled<StyledFunc>(({ name, ...rest }) => {
   ${({ width }) => (width && typeof width === 'number' ? `width: ${width}px;` : `width: ${width}`)};
   ${({ height }) => (height && typeof height === 'number' ? `height: ${height}px;` : `height: ${height}`)};
   object-fit: ${({ fit }) => (fit ? fit : 'fill')};
+  user-select: none;
 `

@@ -12,7 +12,6 @@ const StyledTabList = styled.div`
     display: flex;
     overflow-x: auto;
     width: 100%;
-    padding-left: 50px;
     margin-bottom: 20px;
   }
 `
@@ -30,8 +29,8 @@ const StyledTabButton = styled.button<{ tabIndex: number; isActive: boolean }>`
   text-align: left;
 
   @media (max-width: ${breakpoints.mobile - 1}px) {
+    justify-content: center;
     min-width: 120px;
-    padding: 0 15px 2px;
     border-left: 0;
     border-bottom: 2px solid ${({ isActive, theme }) => (isActive ? theme.palette.green : theme.palette.dark_grey)};
     text-align: center;
