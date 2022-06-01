@@ -1,26 +1,29 @@
 {
   "files": {
     "main.css": "/dragonite-page/static/css/main.bb33a0e2.css",
-    "main.js": "/dragonite-page/static/js/main.7b36f39a.js",
+    "main.js": "/dragonite-page/static/js/main.ad0ced96.js",
     "static/media/header-gif.gif": "/dragonite-page/static/media/header-gif.7556e4bcce528bf6ccab.gif",
     "static/media/header-background.webp": "/dragonite-page/static/media/header-background.799caeb621245a0954f3.webp",
     "static/media/Montserrat-Regular.ttf": "/dragonite-page/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Montserrat-Bold.ttf": "/dragonite-page/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
     "static/media/github-logo-big.webp": "/dragonite-page/static/media/github-logo-big.c238f60bce7af6af48b2.webp",
-    "static/media/github-logo.webp": "/dragonite-page/static/media/github-logo.afc2a26e992f25121035.webp",
+    "static/media/github.webp": "/dragonite-page/static/media/github.afc2a26e992f25121035.webp",
     "static/media/cases.svg": "/dragonite-page/static/media/cases.686afe19ac25af574ed1ba338baf1b38.svg",
-    "static/media/telegram-logo.webp": "/dragonite-page/static/media/telegram-logo.7ca146b718357ae430da.webp",
+    "static/media/telegram.webp": "/dragonite-page/static/media/telegram.7ca146b718357ae430da.webp",
     "static/media/email.svg": "/dragonite-page/static/media/email.6e3023fb2b99c3fe3ecd1014e7222820.svg",
     "static/media/user.svg": "/dragonite-page/static/media/user.59d8f34930e4bbe62b62cb4e92975947.svg",
     "index.html": "/dragonite-page/index.html",
     "static/media/home.svg": "/dragonite-page/static/media/home.d18c8afaa9df143d8922a56d783cef67.svg",
     "static/media/mail.svg": "/dragonite-page/static/media/mail.3da62b0824c84e35775310e7b9bdf123.svg",
+    "static/media/email.webp": "/dragonite-page/static/media/email.733d33d53fd43f7bc358.webp",
+    "static/media/map_pin.webp": "/dragonite-page/static/media/map_pin.eef4e9adf0efd751870f.webp",
+    "static/media/cloud.webp": "/dragonite-page/static/media/cloud.adb19ad591b5d53f37ce.webp",
     "static/media/experience.svg": "/dragonite-page/static/media/experience.21e8d014ba982e33245b70ec423ebfcb.svg",
     "main.bb33a0e2.css.map": "/dragonite-page/static/css/main.bb33a0e2.css.map",
-    "main.7b36f39a.js.map": "/dragonite-page/static/js/main.7b36f39a.js.map"
+    "main.ad0ced96.js.map": "/dragonite-page/static/js/main.ad0ced96.js.map"
   },
   "entrypoints": [
     "static/css/main.bb33a0e2.css",
-    "static/js/main.7b36f39a.js"
+    "static/js/main.ad0ced96.js"
   ]
 }
