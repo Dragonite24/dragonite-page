@@ -3,7 +3,7 @@ import React from 'react'
 import { breakpoints } from 'app/shared'
 import { JOBS } from 'app/data/work-experience'
 import { Text } from 'ui/components'
-import { styled } from 'ui/styles'
+import { styled, theme } from 'ui/styles'
 
 const StyledTabList = styled.div`
   width: 140px;
@@ -23,10 +23,12 @@ const StyledTabButton = styled.button<{ tabIndex: number; isActive: boolean }>`
   max-width: 250px;
   height: 42px;
   padding: 0 16px;
-  border-left: 2px solid ${({ theme, isActive }) => (isActive ? theme.palette.green : theme.palette.dark_grey)};
+  border-left: 5px solid ${({ theme, isActive }) => (isActive ? theme.palette.green : theme.palette.dark_grey)};
 
   color: ${({ isActive, theme }) => (isActive ? theme.palette.white : theme.palette.light_grey)};
   text-align: left;
+
+  transition: border, color, ${theme.transition.hover}ms ease;
 
   @media (max-width: ${breakpoints.mobile - 1}px) {
     justify-content: center;

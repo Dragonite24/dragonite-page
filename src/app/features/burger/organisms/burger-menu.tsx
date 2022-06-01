@@ -5,7 +5,7 @@ import { NAVIGATION_TILES } from 'app/data'
 import { styled, theme } from 'ui/styles'
 
 import { MenuIcon } from '../atoms'
-import { BurgerItem } from '../molecules'
+import { BurgerContacts, BurgerItem } from '../molecules'
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,11 +23,12 @@ const Content = styled.div<{ visible: boolean }>`
   position: absolute;
   top: 60px;
   width: 100%;
-  background-color: ${theme.palette.grey};
-  z-index: -2;
+  border-left: 1px solid ${theme.palette.extra_light_grey};
+  border-right: 1px solid ${theme.palette.light_grey};
 
+  z-index: -2;
   opacity: ${({ visible }) => (visible ? '1' : '0')};
-  transform: ${({ visible }) => (visible ? 'translateY(0)' : 'translateY(-60px)')};
+  transform: ${({ visible }) => (visible ? 'translateY(0)' : 'translateY(-100%)')};
 
   transition: transform, opacity, ${theme.transition.hover}ms ease;
 `
@@ -52,8 +53,9 @@ export const BurgerMenu: React.FC<Props> = ({ isOpened }) => {
     <Wrapper>
       <Content visible={opened}>
         {NAVIGATION_TILES.map((tile, i) => (
-          <BurgerItem tile={tile} key={i} onClick={() => goto(i)} />
+          <BurgerItem key={i} tile={tile} visible={Boolean(opened)} timing={i} onClick={() => goto(i)} />
         ))}
+        <BurgerContacts />
       </Content>
 
       <MenuIcon onClick={onClick} opened={opened} />

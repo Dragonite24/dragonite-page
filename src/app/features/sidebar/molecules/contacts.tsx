@@ -1,3 +1,4 @@
+import { CONTACTS } from 'app/data/contacts'
 import React from 'react'
 import { Image } from 'ui/components'
 
@@ -29,25 +30,9 @@ const ContactIcon = styled(Image)`
   }
 `
 
-type ContactT = {
-  title: string
-  link: string
-}
-
-const contactLinks: ContactT[] = [
-  {
-    title: 'telegram-logo',
-    link: 'https://t.me/dragonite24'
-  },
-  {
-    title: 'github-logo',
-    link: 'https://github.com/Dragonite24'
-  }
-]
-
 export const ContactsBar: React.FC = () => (
   <Wrapper>
-    {contactLinks.map((contact, i) => (
+    {CONTACTS.map((contact, i) => (
       <IconLink key={i} href={contact.link} target="_blank">
         <ContactIcon key={i} name={`contacts/${contact.title}.webp`} height="24px" alt={contact.title} />
       </IconLink>

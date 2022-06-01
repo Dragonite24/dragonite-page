@@ -30,7 +30,7 @@ const Content = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   z-index: 0;
 
@@ -38,15 +38,28 @@ const Content = styled.div`
     flex-direction: column-reverse;
   }
 `
+const LeftSide = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: ${theme.palette.dark_grey};
+  width: 100%;
+  height: 100%;
+`
+
+const RightSide = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: ${theme.palette.black};
+  width: 60.5%;
+  height: 100%;
+`
 
 export const AboutMeSection: React.FC = () => {
   return (
     <Wrapper>
-      <BackgroundImage name="header-background.webp" width="100%" height="100%" fit="cover" />
       <Content>
-        <Text variant="h0" color={theme.palette.white}>
-          Сайт в разработке
-        </Text>
+        <LeftSide></LeftSide>
+        <RightSide></RightSide>
       </Content>
     </Wrapper>
   )

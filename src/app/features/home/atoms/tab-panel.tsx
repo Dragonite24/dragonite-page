@@ -61,6 +61,7 @@ const Company = styled(Text)`
 
 const Period = styled(Text)`
   margin-bottom: 10px;
+  /* font-weight: bold; */
 `
 
 type Props = {
@@ -76,7 +77,7 @@ export const TabPanel: React.FC<Props> = ({ activeIndex, setActiveTab }) => (
           <Company variant="t2" color={theme.palette.white}>
             {el.title}
           </Company>
-          <Period variant="t1" color={theme.palette.white}>
+          <Period variant="t1" color={theme.palette.light_grey}>
             {el.period}
           </Period>
           <StyledUl>
