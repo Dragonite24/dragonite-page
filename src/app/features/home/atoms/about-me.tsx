@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { breakpoints } from 'app/shared'
-import { Text } from 'ui/components'
+import { animateColor, Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
 import { ReactComponent as Cases } from 'ui/icons/contacts/cases.svg'
@@ -41,6 +41,7 @@ const AboutMeContent = styled.div`
 
 const PrefixText = styled(Text)`
   position: relative;
+
   &::before {
     content: 'S';
     position: absolute;
@@ -48,6 +49,7 @@ const PrefixText = styled(Text)`
     bottom: 2px;
 
     color: ${theme.palette.green};
+    animation: ${animateColor} ${theme.transition.hover * 40}ms linear infinite;
   }
 `
 

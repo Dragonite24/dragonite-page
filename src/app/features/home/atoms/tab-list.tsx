@@ -18,17 +18,46 @@ const StyledTabList = styled.div`
 
 const StyledTabButton = styled.button<{ tabIndex: number; isActive: boolean }>`
   display: flex;
+  position: relative;
   align-items: center;
   width: 100%;
   max-width: 250px;
-  height: 42px;
+  height: 40px;
   padding: 0 16px;
-  border-left: 5px solid ${({ theme, isActive }) => (isActive ? theme.palette.green : theme.palette.dark_grey)};
+  border-left: 2px solid ${theme.palette.green};
 
   color: ${({ isActive, theme }) => (isActive ? theme.palette.white : theme.palette.light_grey)};
   text-align: left;
 
   transition: border, color, ${theme.transition.hover}ms ease;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${theme.palette.green};
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform, ${theme.transition.hover}ms ease;
+  }
+
+  &:hover {
+    &:before {
+      transform: scaleX(1);
+    }
+
+    & > ${Text} {
+      color: ${theme.palette.white};
+      z-index: 1;
+      transition: color, ${theme.transition.hover}ms ease;
+    }
+  }
+
+  :not(:last-child) {
+    margin-bottom: 2px;
+  }
 
   @media (max-width: ${breakpoints.mobile - 1}px) {
     justify-content: center;
@@ -36,13 +65,6 @@ const StyledTabButton = styled.button<{ tabIndex: number; isActive: boolean }>`
     border-left: 0;
     border-bottom: 2px solid ${({ isActive, theme }) => (isActive ? theme.palette.green : theme.palette.dark_grey)};
     text-align: center;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: ${({ theme }) => theme.palette.hover_dark_blue};
-      color: ${({ theme }) => theme.palette.white};
-    }
   }
 `
 

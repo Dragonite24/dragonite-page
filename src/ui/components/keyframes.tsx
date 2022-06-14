@@ -121,3 +121,12 @@ export const rotateItem = keyframes`
     transform: rotateZ(360deg);
   }
 `
+
+export const animateColor = keyframes`
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+`

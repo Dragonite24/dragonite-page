@@ -1,6 +1,6 @@
 export { Text } from './text'
 export { Button } from './button'
 export { GlitchEffect } from './glitch-effect'
-export { glitchFirst, glitchSecond, rotateItem } from './keyframes'
+export { glitchFirst, glitchSecond, rotateItem, animateColor } from './keyframes'
 export { Image } from './image'
 export { Divider } from './divider'
