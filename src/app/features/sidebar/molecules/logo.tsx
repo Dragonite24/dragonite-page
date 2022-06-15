@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text } from 'ui/components'
+import { Image } from 'ui/components'
 import { styled } from 'ui/styles'
 
 const Wrapper = styled.div`
@@ -11,8 +11,14 @@ const Wrapper = styled.div`
   height: 80px;
 `
 
+const LogoImage = styled(Image)`
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+`
+
 export const LogoIcon: React.FC = () => (
   <Wrapper>
-    <Text variant="h2">D</Text>
+    <LogoImage name="logo.webp" />
   </Wrapper>
 )
