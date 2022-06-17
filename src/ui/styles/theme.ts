@@ -15,7 +15,9 @@ export const theme = {
     montserrat: 'Montserrat'
   },
   transition: {
-    hover: 200
+    hover: 200,
+    spin: 10000,
+    spinLong: 20000
   },
   typography: {
     h0: {

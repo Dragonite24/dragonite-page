@@ -1,3 +1,3 @@
-export { NavigationTile } from './navigation-tile'
-export { ContactsBar } from './contacts'
-export { LogoIcon } from './logo'
+export { NavigationTile } from './NavigationTile'
+export { ContactsBar } from './Contacts'
+export { LogoIcon } from './Logo'

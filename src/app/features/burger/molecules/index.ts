@@ -1,2 +1,2 @@
-export { BurgerItem } from './burger-item'
-export { BurgerContacts } from './contacts'
+export { BurgerItem } from './BurgerItem'
+export { BurgerContacts } from './BurgerContacts'
