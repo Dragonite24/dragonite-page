@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/dragonite-page/static/css/main.bb33a0e2.css",
-    "main.js": "/dragonite-page/static/js/main.ad0ced96.js",
+    "main.js": "/dragonite-page/static/js/main.ebac4668.js",
     "static/media/header-gif.gif": "/dragonite-page/static/media/header-gif.7556e4bcce528bf6ccab.gif",
     "static/media/header-background.webp": "/dragonite-page/static/media/header-background.799caeb621245a0954f3.webp",
     "static/media/Montserrat-Regular.ttf": "/dragonite-page/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Montserrat-Bold.ttf": "/dragonite-page/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
+    "static/media/person.png": "/dragonite-page/static/media/person.4f3a53b05c3f73be9ebf.png",
+    "static/media/logo.webp": "/dragonite-page/static/media/logo.caf876e49d7f3b2a2755.webp",
     "static/media/github-logo-big.webp": "/dragonite-page/static/media/github-logo-big.c238f60bce7af6af48b2.webp",
     "static/media/github.webp": "/dragonite-page/static/media/github.afc2a26e992f25121035.webp",
     "static/media/cases.svg": "/dragonite-page/static/media/cases.686afe19ac25af574ed1ba338baf1b38.svg",
@@ -20,10 +22,10 @@
     "static/media/cloud.webp": "/dragonite-page/static/media/cloud.adb19ad591b5d53f37ce.webp",
     "static/media/experience.svg": "/dragonite-page/static/media/experience.21e8d014ba982e33245b70ec423ebfcb.svg",
     "main.bb33a0e2.css.map": "/dragonite-page/static/css/main.bb33a0e2.css.map",
-    "main.ad0ced96.js.map": "/dragonite-page/static/js/main.ad0ced96.js.map"
+    "main.ebac4668.js.map": "/dragonite-page/static/js/main.ebac4668.js.map"
   },
   "entrypoints": [
     "static/css/main.bb33a0e2.css",
-    "static/js/main.ad0ced96.js"
+    "static/js/main.ebac4668.js"
   ]
 }
