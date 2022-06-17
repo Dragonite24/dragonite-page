@@ -58,8 +58,34 @@ const StyledLogos = styled(Image)<{ id: number; isInner?: boolean }>`
   animation-direction: reverse;
 
   ${({ isInner, id }) => css`
-    top: ${isInner ? '40px' : '10px'};
-    left: ${isInner ? '40px' : '10px'};
+    &:nth-child(1) {
+      top: ${isInner ? '40px' : '10px'};
+      left: ${isInner ? '40px' : '10px'};
+    }
+    &:nth-child(2) {
+      top: ${isInner ? '40px' : '10px'};
+      right: ${isInner ? '40px' : '10px'};
+    }
+    &:nth-child(3) {
+      bottom: ${isInner ? '40px' : '10px'};
+      left: ${isInner ? '40px' : '10px'};
+    }
+    &:nth-child(4) {
+      bottom: ${isInner ? '40px' : '10px'};
+      right: ${isInner ? '40px' : '10px'};
+    }
+    &:nth-child(5) {
+      bottom: ${isInner ? '200px' : '100px'};
+      right: ${isInner ? '-30px' : '-30px'};
+    }
+    &:nth-child(6) {
+      top: ${isInner ? '200px' : '100px'};
+      left: ${isInner ? '-30px' : '-30px'};
+    }
+    &:nth-child(7) {
+      top: ${isInner ? '-30px' : '260px'};
+      left: ${isInner ? '200px' : '130px'};
+    }
   `}
 `
 

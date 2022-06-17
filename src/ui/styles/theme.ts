@@ -17,7 +17,7 @@ export const theme = {
   transition: {
     hover: 200,
     spin: 10000,
-    spinLong: 20000
+    spinLong: 30000
   },
   typography: {
     h0: {
