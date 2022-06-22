@@ -6,6 +6,7 @@ import { styled, theme } from 'ui/styles'
 
 import { ReactComponent as Cases } from 'ui/icons/contacts/cases.svg'
 import { ReactComponent as Mail } from 'ui/icons/contacts/mail.svg'
+import Pattern from 'ui/icons/pattern.svg'
 
 const BREAKPOINT = 700
 
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   height: 70%;
   width: 100%;
+  max-width: ${breakpoints.original}px;
   background-color: ${theme.palette.dark_grey};
 
   @media (max-width: ${breakpoints.tablet}px) {
@@ -24,11 +26,12 @@ const Wrapper = styled.div`
 
 const AboutMeContent = styled.div`
   display: flex;
+  box-sizing: content-box;
   flex-direction: column;
   height: auto;
-  width: 100%;
   padding: 64px;
   transition: padding ${theme.transition.hover}ms linear;
+  background-color: ${theme.palette.extra_light_grey};
 
   @media (max-width: ${breakpoints.tablet}px) {
     padding: 32px;
@@ -127,7 +130,7 @@ export const AboutMeBlock: React.FC = () => {
 
   return (
     <Wrapper>
-      <AboutMeContent>
+      <AboutMeContent style={{ backgroundImage: `url(${Pattern})` }}>
         <Text variant="h0" color={theme.palette.white}>
           HI, I'm
           <PrefixText variant="h0">Semen,</PrefixText>

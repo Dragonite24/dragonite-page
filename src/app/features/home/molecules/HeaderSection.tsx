@@ -31,6 +31,7 @@ const BackgroundImage = styled(Image)`
 const Content = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: flex-end;
   min-height: 100vh;
   width: 100%;
