@@ -25,10 +25,10 @@ const GitHubBox = styled.a`
   justify-content: center;
   background-color: ${theme.palette.green};
 
-  transition: filter ${theme.transition.hover}ms ease;
+  transition: background-color ${theme.transition.hover}ms ease;
 
   &:hover {
-    filter: brightness(1.1);
+    background-color: ${theme.palette.light_green};
   }
 `
 

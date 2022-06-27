@@ -3,7 +3,7 @@ import React from 'react'
 import { breakpoints } from 'app/shared'
 
 import { styled, theme } from 'ui/styles'
-import { SkillsOrbit } from './SkillsOrbit'
+import { Biography, SkillsOrbit } from '../molecules'
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,10 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-
-  min-height: 100vh;
   width: 100%;
-  z-index: 0;
 
   @media (max-width: ${breakpoints.tablet}px) {
     flex-direction: column-reverse;
@@ -24,10 +21,11 @@ const Wrapper = styled.div`
 const LeftSide = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  background-color: ${theme.palette.dark_grey};
+  background-color: ${theme.palette.black};
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 `
 
 const RightSide = styled.div`
@@ -45,7 +43,9 @@ const RightSide = styled.div`
 export const AboutMeSection: React.FC = () => {
   return (
     <Wrapper>
-      <LeftSide></LeftSide>
+      <LeftSide>
+        <Biography />
+      </LeftSide>
       <RightSide>
         <SkillsOrbit />
       </RightSide>

@@ -1,5 +1,4 @@
-import { Image, spinLeft, spinRight } from 'ui/components'
-import { css } from 'styled-components'
+import { Image, spinRight } from 'ui/components'
 
 import { styled, theme } from 'ui/styles'
 import { Logos } from 'ui/images/swiper'
@@ -32,26 +31,19 @@ const OrbitContainer = styled.div`
   justify-content: center;
 `
 
-const Orbit = styled.div<{ isInner?: boolean }>`
+const Orbit = styled.div`
   position: relative;
   display: flex;
   top: calc(30% - 150px);
   margin: 60px;
   min-width: 400px;
   height: 400px;
-  border: 2px ${theme.palette.dark_grey} dashed;
+  border: 2px ${theme.palette.dark_blue} dashed;
   border-radius: 50%;
-  animation: ${({ isInner }) =>
-    isInner
-      ? css`
-          ${spinRight} ${theme.transition.spinLong}ms linear infinite
-        `
-      : css`
-          ${spinLeft} ${theme.transition.spin}ms linear infinite
-        `};
+  animation: ${spinRight} ${theme.transition.spinLong}ms linear infinite;
 `
 
-const StyledLogos = styled(Image)<{ isInner?: boolean }>`
+const StyledLogos = styled(Image)`
   animation: inherit;
   animation-direction: reverse;
   display: block;
@@ -106,9 +98,9 @@ export const SkillsOrbit = () => {
     <Wrapper style={wrapperStyles}>
       <StyledImage name="person.png" width="100%" height="100%" />
       <OrbitContainer>
-        <Orbit isInner>
+        <Orbit>
           {Logos.map((el, idx) => (
-            <StyledLogos isInner id={idx} name={`swiper/${el}.png`} alt={el} />
+            <StyledLogos id={idx} name={`swiper/${el}.png`} alt={el} />
           ))}
         </Orbit>
       </OrbitContainer>

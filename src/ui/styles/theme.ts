@@ -9,7 +9,8 @@ export const theme = {
     dark_blue: '#141a24',
     hover_dark_blue: '#1e2838',
     blue: '#4b6289',
-    green: '#1ba94c'
+    green: '#1ba94c',
+    light_green: '#22d560'
   },
   fontFamily: {
     montserrat: 'Montserrat'
@@ -39,6 +40,11 @@ export const theme = {
       fontSize: '28px',
       lineHeight: '36px',
       fontWeight: 'bold'
+    },
+    h4: {
+      fontSize: '24px',
+      lineHeight: '32px',
+      fontWeight: 'normal'
     },
     t0: {
       fontSize: '14px',
