@@ -5,20 +5,35 @@ import { Button, Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 import { shuffleStr } from 'utils/shuffle'
 
+const BIOGRAPHY: TextType[] = [
+  {
+    title: 'Student years (2018-2022)',
+    text: [
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Mus integer finibus nulla curae molestie dictum maximus. Parturient molestie nibh class natoque cubilia vulputate fusce libero. Vehicula nam elit tellus venenatis hendrerit scelerisque dapibus. Arcu finibus placerat eros dis torquent conubia viverra integer. Himenaeos parturient fusce aliquet fermentum nisi tincidunt tellus condimentum. Et non dignissim convallis magnis class. Cubilia erat id euismod himenaeos, erat commodo. Lectus semper phasellus imperdiet nunc cubilia; arcu nulla.',
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Quis netus curae fusce proin placerat platea sollicitudin. Cubilia nibh blandit diam ad. Quisque ipsum molestie nascetur velit et diam tristique. Ex lectus etiam phasellus ligula pharetra lectus metus. Cursus ut et eleifend arcu eget. Nisi sed habitasse vel nibh conubia ridiculus ullamcorper class.',
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Quis netus curae fusce proin placerat platea sollicitudin. Cubilia nibh blandit diam ad. Quisque ipsum molestie nascetur velit et diam tristique. Ex lectus etiam phasellus ligula pharetra lectus metus. Cursus ut et eleifend arcu eget. Nisi sed habitasse vel nibh conubia ridiculus ullamcorper class.',
+      'Lorem ipsum odor amet, consectetuer adipiscing elit. Mus integer finibus nulla curae molestie dictum maximus. Parturient molestie nibh class natoque cubilia vulputate fusce libero. Vehicula nam elit tellus venenatis hendrerit scelerisque dapibus. Arcu finibus placerat eros dis torquent conubia viverra integer. Himenaeos parturient fusce aliquet fermentum nisi tincidunt tellus condimentum. Et non dignissim convallis magnis class. Cubilia erat id euismod himenaeos, erat commodo. Lectus semper phasellus imperdiet nunc cubilia; arcu nulla.'
+    ]
+  }
+]
+
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  min-height: 800px;
-  max-width: 1024px;
   height: 100%;
+`
+
+const Padding = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1024px;
+  padding: 32px;
 `
 
 const SortSection = styled.section`
   display: inline-flex;
   align-items: center;
-  padding-top: 56px;
+  margin-bottom: 8px;
 `
 
 const SortText = styled(Text)``
@@ -47,9 +62,10 @@ const SortButton = styled(Button)<{ activated: boolean }>`
 
 const Border = styled.section`
   display: flex;
-  margin: 32px;
-  border: 3px dashed ${theme.palette.grey};
   width: 100%;
+  overflow-y: scroll;
+  border: 3px dashed ${theme.palette.grey};
+  padding: 16px;
 
   @media (max-width: ${breakpoints.tablet - 1}px) {
     margin: 16px;
@@ -58,34 +74,19 @@ const Border = styled.section`
     margin: 8px;
   }
 `
-const Content = styled.div`
+const StyledUl = styled.ul`
   display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 32px 16px;
-  height: 100vh;
-  margin: 0em;
-  overflow-y: auto;
   color: ${theme.palette.extra_light_grey};
 `
 
-const TextSection = styled.section``
+const StyledLi = styled.li`
+  flex-direction: column;
+`
 
 type TextType = {
   title: string
   text: string[]
 }
-
-const BIOGRAPHY: TextType[] = [
-  {
-    title: 'Student years (2018-2022)',
-    text: [
-      'Lorem ipsum odor amet, consectetuer adipiscing elit. Mus integer finibus nulla curae molestie dictum maximus. Parturient molestie nibh class natoque cubilia vulputate fusce libero. Vehicula nam elit tellus venenatis hendrerit scelerisque dapibus. Arcu finibus placerat eros dis torquent conubia viverra integer. Himenaeos parturient fusce aliquet fermentum nisi tincidunt tellus condimentum. Et non dignissim convallis magnis class. Cubilia erat id euismod himenaeos, erat commodo. Lectus semper phasellus imperdiet nunc cubilia; arcu nulla.',
-      'Lorem ipsum odor amet, consectetuer adipiscing elit. Quis netus curae fusce proin placerat platea sollicitudin. Cubilia nibh blandit diam ad. Quisque ipsum molestie nascetur velit et diam tristique. Ex lectus etiam phasellus ligula pharetra lectus metus. Cursus ut et eleifend arcu eget. Nisi sed habitasse vel nibh conubia ridiculus ullamcorper class.',
-      'Lorem ipsum odor amet, consectetuer adipiscing elit. Mus integer finibus nulla curae molestie dictum maximus. Parturient molestie nibh class natoque cubilia vulputate fusce libero. Vehicula nam elit tellus venenatis hendrerit scelerisque dapibus. Arcu finibus placerat eros dis torquent conubia viverra integer. Himenaeos parturient fusce aliquet fermentum nisi tincidunt tellus condimentum. Et non dignissim convallis magnis class. Cubilia erat id euismod himenaeos, erat commodo. Lectus semper phasellus imperdiet nunc cubilia; arcu nulla.'
-    ]
-  }
-]
 
 export const Biography = () => {
   const [isSorted, setIsSorted] = React.useState<boolean>(false)
@@ -99,28 +100,30 @@ export const Biography = () => {
 
   return (
     <Wrapper>
-      <SortSection>
-        <SortText variant="h3" color={theme.palette.white}>
-          {sortText}
-        </SortText>
-        <SortButton onClick={handlerSortText} activated={isSorted}>
-          Sort
-        </SortButton>
-      </SortSection>
-      <Border>
-        <Content>
-          {BIOGRAPHY.map((el) => (
-            <TextSection>
-              <Text variant="h1">{el.title}</Text>
-              {el.text.map((text) => (
-                <Text variant="h4" justify>
-                  {text}
-                </Text>
-              ))}
-            </TextSection>
-          ))}
-        </Content>
-      </Border>
+      <Padding>
+        <SortSection>
+          <SortText variant="h3" color={theme.palette.white}>
+            {sortText}
+          </SortText>
+          <SortButton onClick={handlerSortText} activated={isSorted}>
+            Sort
+          </SortButton>
+        </SortSection>
+        <Border>
+          <StyledUl>
+            {BIOGRAPHY.map((el, i) => (
+              <StyledLi key={i}>
+                <Text variant="h1">{el.title}</Text>
+                {el.text.map((text, idx) => (
+                  <Text key={idx} variant="h4" justify>
+                    {text}
+                  </Text>
+                ))}
+              </StyledLi>
+            ))}
+          </StyledUl>
+        </Border>
+      </Padding>
     </Wrapper>
   )
 }

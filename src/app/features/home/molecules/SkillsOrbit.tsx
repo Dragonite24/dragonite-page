@@ -85,12 +85,6 @@ const StyledLogos = styled(Image)`
 
 export const SkillsOrbit = () => {
   const wrapperStyles: React.CSSProperties = {
-    display: 'inline-flex',
-    flexDirection: 'row',
-    position: 'relative',
-
-    height: 'auto',
-    minHeight: '800px',
     backgroundImage: `url(${Pattern})`
   }
 

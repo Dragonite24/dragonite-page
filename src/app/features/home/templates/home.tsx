@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   scroll-behavior: smooth;
 `
 
@@ -16,7 +17,8 @@ const Box = styled.section`
   flex-direction: column;
   scroll-behavior: smooth;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 700px;
   color: #000;
 `
 

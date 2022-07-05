@@ -1,5 +1,4 @@
 import React from 'react'
-import { CSSTransition } from 'react-transition-group'
 
 import { breakpoints } from 'app/shared'
 import { Image } from 'ui/components'
@@ -13,7 +12,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   background-color: ${theme.palette.black};
 `
 
@@ -33,7 +32,7 @@ const Content = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: 0;
 
@@ -43,13 +42,11 @@ const Content = styled.div`
 `
 
 export const HeaderSection: React.FC = () => (
-  <CSSTransition timeout={theme.transition.hover} classNames="hello">
-    <Wrapper>
-      <BackgroundImage name="header-background.webp" width="100%" height="100%" fit="cover" />
-      <Content>
-        <GitHubBlock />
-        <AboutMeBlock />
-      </Content>
-    </Wrapper>
-  </CSSTransition>
+  <Wrapper>
+    <BackgroundImage name="header-background.webp" width="100%" height="100%" fit="cover" />
+    <Content>
+      <GitHubBlock />
+      <AboutMeBlock />
+    </Content>
+  </Wrapper>
 )

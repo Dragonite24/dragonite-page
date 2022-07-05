@@ -14,7 +14,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 70%;
   width: 100%;
   max-width: ${breakpoints.original}px;
   background-color: ${theme.palette.dark_grey};

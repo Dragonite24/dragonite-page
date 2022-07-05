@@ -27,11 +27,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    position: relative;
     font-family: ${theme.fontFamily.montserrat}, sans-serif;
     color: ${theme.palette.white};
-    overflow-x: hidden;
-    overflow-y: auto;
 
     &.m-show-modal {
       overflow: hidden;
@@ -39,12 +36,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   #root {
-    position: relative;
     display: flex;
+    width: 100%;
     flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
-    transition: filter .3s linear;
+    align-items: center;
+    position: relative;
   }
 
   .blur {
@@ -57,6 +53,6 @@ export const GlobalStyles = createGlobalStyle`
 
   b,
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 `

@@ -7,6 +7,7 @@ const Content = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1 0;
+  width: 100%;
   align-items: center;
   height: 100vh;
   overflow: auto;

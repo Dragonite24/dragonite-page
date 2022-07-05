@@ -1,6 +1,6 @@
-import { breakpoints } from 'app/shared'
 import React, { useState } from 'react'
 
+import { breakpoints } from 'app/shared'
 import { Divider, Text } from 'ui/components'
 import { styled, theme } from 'ui/styles'
 
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   background-color: ${theme.palette.dark_blue};
 `
 
