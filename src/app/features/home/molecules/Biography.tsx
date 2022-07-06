@@ -125,7 +125,6 @@ export const Biography = () => {
           <SortText variant="h3" color={theme.palette.white}>
             {sortText}
           </SortText>
-          {[<div />, <div />, <div />]}
           <SortButton onClick={handlerSortText} activated={isSorted}>
             Sort
           </SortButton>
@@ -136,7 +135,7 @@ export const Biography = () => {
               <StyledLi key={i}>
                 <Text variant="h1">{el.title}</Text>
                 {el.text.map((text, idx) => (
-                  <Text key={idx} variant="h4" justify>
+                  <Text key={idx} variant="h4" text_align="justify">
                     {text}
                   </Text>
                 ))}

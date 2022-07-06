@@ -94,7 +94,7 @@ export const SkillsOrbit = () => {
       <OrbitContainer>
         <Orbit>
           {Logos.map((el, idx) => (
-            <StyledLogos id={idx} name={`orbit/${el}.png`} alt={el} />
+            <StyledLogos key={idx} name={`orbit/${el}.png`} alt={el} />
           ))}
         </Orbit>
       </OrbitContainer>

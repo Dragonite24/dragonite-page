@@ -10,7 +10,7 @@ type Props = {
   align?: 'center' | 'right' | 'left'
   divRef?: () => React.RefObject<HTMLDivElement>
   bold?: boolean
-  justify?: boolean
+  text_align?: string
 }
 
 type StyledFunc = (props: Props & { children?: React.ReactNode }) => JSX.Element
@@ -35,5 +35,5 @@ export const Text: TextT = styled<StyledFunc>(({ variant, inline, color, align, 
   ${({ color }) => color && `color: ${color};`}
   ${({ align }) => align && `text-align: ${align};`}
   ${({ bold }) => bold && `font-weight: bold;`}
-  ${({ justify }) => justify && `text-align: justify;`}
+  ${({ text_align }) => text_align && `text-align: ${text_align};`}
 `
