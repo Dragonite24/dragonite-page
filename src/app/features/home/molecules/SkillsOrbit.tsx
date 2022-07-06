@@ -1,7 +1,7 @@
 import { Image, spinRight } from 'ui/components'
 
 import { styled, theme } from 'ui/styles'
-import { Logos } from 'ui/images/swiper'
+import { Logos } from 'ui/images/orbit'
 
 import Pattern from 'ui/icons/pattern.svg'
 
@@ -94,7 +94,7 @@ export const SkillsOrbit = () => {
       <OrbitContainer>
         <Orbit>
           {Logos.map((el, idx) => (
-            <StyledLogos id={idx} name={`swiper/${el}.png`} alt={el} />
+            <StyledLogos id={idx} name={`orbit/${el}.png`} alt={el} />
           ))}
         </Orbit>
       </OrbitContainer>

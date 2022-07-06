@@ -3,6 +3,7 @@ import React from 'react'
 import { SectionT } from 'nav-sections'
 import { NAVIGATION_TILES } from 'app/data'
 import { styled } from 'ui/styles'
+import { breakpoints } from 'app/shared'
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,6 +21,10 @@ const Box = styled.section`
   height: 100vh;
   min-height: 700px;
   color: #000;
+
+  @media (max-width: ${breakpoints.desktop - 1}px) {
+    height: 100%;
+  }
 `
 
 type Props = {

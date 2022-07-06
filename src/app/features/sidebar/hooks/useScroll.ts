@@ -16,7 +16,7 @@ type FX = {
 export const useScroll = () => {
   const dispatch = useDispatch()
 
-  const activeSection = useSelector((state: RootState) => state.popup.activeSection)
+  const activeSection = useSelector((state: RootState) => state.section.activeSection)
 
   let fx: FX | null = null
 

@@ -36,7 +36,9 @@ const SortSection = styled.section`
   margin-bottom: 8px;
 `
 
-const SortText = styled(Text)``
+const SortText = styled(Text)`
+  transition: all ${theme.transition.hover} ease;
+`
 
 const SortButton = styled(Button)<{ activated: boolean }>`
   display: flex;
@@ -88,13 +90,31 @@ type TextType = {
   text: string[]
 }
 
+const SORTED_TEXT = 'About Me'
+
 export const Biography = () => {
   const [isSorted, setIsSorted] = React.useState<boolean>(false)
-  const [sortText, setSortText] = React.useState<string>(shuffleStr('About Me'))
+  const [sortText, setSortText] = React.useState<string>(shuffleStr(SORTED_TEXT))
 
-  const handlerSortText = () => {
+  const handlerSortText = async () => {
     if (!isSorted) {
       setIsSorted(true)
+      const array = sortText.split('')
+      const original = SORTED_TEXT.split('')
+
+      // TODO: исправить для повторяющихся символов строки
+      for (let i = 0; i < SORTED_TEXT.length; i++) {
+        setTimeout(() => {
+          for (let j = 0; j < SORTED_TEXT.length; j++) {
+            if (original.indexOf(array[j]) > original.indexOf(array[j + 1])) {
+              const temp = array[j]
+              array[j] = array[j + 1]
+              array[j + 1] = temp
+              setSortText(Object.values(array).join(''))
+            }
+          }
+        }, i * 100)
+      }
     }
   }
 
@@ -105,6 +125,7 @@ export const Biography = () => {
           <SortText variant="h3" color={theme.palette.white}>
             {sortText}
           </SortText>
+          {[<div />, <div />, <div />]}
           <SortButton onClick={handlerSortText} activated={isSorted}>
             Sort
           </SortButton>

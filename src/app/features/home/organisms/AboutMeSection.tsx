@@ -31,13 +31,13 @@ const LeftSide = styled.div`
 
 const RightSide = styled.div`
   display: flex;
-  flex-direction: row;
   background-color: ${theme.palette.black};
   width: 60.3%;
   height: 100%;
 
-  @media (max-width: ${breakpoints.tablet}px) {
+  @media (max-width: ${breakpoints.desktop}px) {
     width: 100%;
+    min-height: 800px;
   }
 `
 
