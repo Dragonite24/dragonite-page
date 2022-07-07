@@ -1,2 +1,2 @@
-export { Home } from './templates'
-export { HeaderSection, BasedSection, AboutMeSection, WorkExperienceSection } from './organisms'
+export * from './templates'
+export * from './organisms'

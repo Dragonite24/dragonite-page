@@ -9,7 +9,7 @@ export type UseWordleReturnT = ReturnType<typeof useWordle>
 const WORD_LENGTH: number = 5
 
 export const useWordle = () => {
-  const [solution, setSolution] = useState<string>('QWEEE')
+  const [solution, setSolution] = useState<string>('react')
   const [guesses, setGuesses] = useState(Array(6).fill(''))
   const [currentGuess, setCurrentGuess] = useState<string>('')
   const [isGameOver, setIsGameOver] = useState<boolean | null>(null)
@@ -20,19 +20,17 @@ export const useWordle = () => {
         return
       }
 
-      console.log(event.key)
-
       if (event.key === 'Enter') {
-        console.log(currentGuess.length)
-
         if (currentGuess.length !== 5) {
           return
         }
+
         const newGuesses = [...guesses]
         newGuesses[guesses.findIndex((el) => el === '')] = currentGuess
         setGuesses(newGuesses)
 
-        setIsGameOver(solution === currentGuess)
+        setIsGameOver(solution === currentGuess.toLocaleLowerCase())
+        setCurrentGuess('')
       }
 
       if (event.key === 'Backspace') {

@@ -26,9 +26,9 @@
 .correct {
     background-color: #1ba94c;
 }
-.incorrect {
-    background-color: tomato;
-}
 .close {
+    background-color: yellow;
+}
+.incorrect {
     background-color: #9f9f9f;
 }

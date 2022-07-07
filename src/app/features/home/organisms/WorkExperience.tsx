@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: 500px;
   background-color: ${theme.palette.dark_blue};
 `
 
@@ -31,6 +32,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  padding: 32px;
   min-height: 300px;
   justify-content: flex-start;
   width: 100%;
@@ -41,6 +43,8 @@ const Content = styled.div`
 `
 
 const StyledJobsSection = styled.section`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 700px;
 `

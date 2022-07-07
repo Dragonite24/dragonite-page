@@ -16,7 +16,7 @@ const StyledImage = styled(Image)`
   display: flex;
   position: absolute;
   object-fit: contain;
-  top: 30%;
+  top: calc(30% - 50px);
   left: 0;
   right: 0;
   margin-left: auto;
@@ -34,11 +34,10 @@ const OrbitContainer = styled.div`
 const Orbit = styled.div`
   position: relative;
   display: flex;
-  top: calc(30% - 150px);
-  margin: 60px;
-  min-width: 400px;
-  height: 400px;
-  border: 2px ${theme.palette.dark_blue} dashed;
+  top: calc(30% - 80px);
+  min-width: 300px;
+  height: 300px;
+  border: 2px ${theme.palette.black} dashed;
   border-radius: 50%;
   animation: ${spinRight} ${theme.transition.spinLong}ms linear infinite;
 `
@@ -49,37 +48,48 @@ const StyledLogos = styled(Image)`
   display: block;
   position: absolute;
 
+  /* react */
   &:nth-child(1) {
-    top: 40px;
-    left: 40px;
+    top: 0px;
+    left: 20px;
   }
+
+  /* redux */
   &:nth-child(2) {
-    top: 40px;
-    right: 40px;
+    top: 0px;
+    right: 15px;
   }
+
+  /* html */
   &:nth-child(3) {
-    bottom: 40px;
-    left: 40px;
+    bottom: 30px;
+    left: 0px;
   }
+
+  /* TS */
   &:nth-child(4) {
-    bottom: 40px;
-    right: 40px;
+    bottom: 0px;
+    right: 30px;
   }
+
+  /* css */
   &:nth-child(5) {
-    bottom: 200px;
+    bottom: 120px;
     right: -30px;
   }
+
+  /* flutter */
   &:nth-child(6) {
-    top: 200px;
+    top: 100px;
     left: -30px;
   }
   &:nth-child(7) {
     top: -30px;
-    left: 200px;
+    left: 120px;
   }
   &:nth-child(8) {
     bottom: -30px;
-    left: 200px;
+    left: 80px;
   }
 `
 

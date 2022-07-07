@@ -1,4 +1,4 @@
-import { breakpoints } from 'app/shared'
+import { breakpoints, useDimensions } from 'app/shared'
 import React from 'react'
 import { Button, Text } from 'ui/components'
 
@@ -26,7 +26,7 @@ const Padding = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1024px;
+  max-width: 900px;
   padding: 32px;
 `
 
@@ -68,6 +68,7 @@ const Border = styled.section`
   overflow-y: scroll;
   border: 3px dashed ${theme.palette.grey};
   padding: 16px;
+  margin-left: 56px;
 
   @media (max-width: ${breakpoints.tablet - 1}px) {
     margin: 16px;
@@ -95,6 +96,7 @@ const SORTED_TEXT = 'About Me'
 export const Biography = () => {
   const [isSorted, setIsSorted] = React.useState<boolean>(false)
   const [sortText, setSortText] = React.useState<string>(shuffleStr(SORTED_TEXT))
+  const { isMobile } = useDimensions()
 
   const handlerSortText = async () => {
     if (!isSorted) {
@@ -133,9 +135,9 @@ export const Biography = () => {
           <StyledUl>
             {BIOGRAPHY.map((el, i) => (
               <StyledLi key={i}>
-                <Text variant="h1">{el.title}</Text>
+                <Text variant={isMobile ? 't2' : 'h1'}>{el.title}</Text>
                 {el.text.map((text, idx) => (
-                  <Text key={idx} variant="h4" text_align="justify">
+                  <Text key={idx} variant={isMobile ? 't1' : 'h4'} text_align="justify">
                     {text}
                   </Text>
                 ))}

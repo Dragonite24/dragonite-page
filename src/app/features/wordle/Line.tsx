@@ -16,7 +16,7 @@ export const Line: React.FC<LineProps> = ({ guess, isFinal, solution, wordLength
       if (char === solution[i]) {
         className += ' correct'
       } else if (solution.includes(char)) {
-        className += ' correct'
+        className += ' close'
       } else {
         className += ' incorrect'
       }
