@@ -3,13 +3,13 @@ import { createRef } from 'react'
 const headerRef = createRef<HTMLDivElement>()
 const aboutMeRef = createRef<HTMLDivElement>()
 const expRef = createRef<HTMLDivElement>()
-const basedRef = createRef<HTMLDivElement>()
+const wordleRef = createRef<HTMLDivElement>()
 
 enum Tiles {
   home = 'Home',
   aboutMe = 'About Me',
   experience = 'Experience',
-  based = 'Based'
+  Wordle = 'Wordle'
 }
 
 export type TilesT = {
@@ -31,7 +31,7 @@ export const NAVIGATION_TILES: TilesT[] = [
     tileRef: expRef
   },
   {
-    title: Tiles.based,
-    tileRef: basedRef
+    title: Tiles.Wordle,
+    tileRef: wordleRef
   }
 ]

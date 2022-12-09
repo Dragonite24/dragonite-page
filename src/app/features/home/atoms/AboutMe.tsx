@@ -148,7 +148,7 @@ export const AboutMeBlock: React.FC = () => {
                 My past cases
               </Text>
               <Text variant="t0_bold" color={theme.palette.light_grey}>
-                I have 1+ year of experience in IT
+                I have 2+ year of experience in IT
               </Text>
             </TextWrapper>
           </SemiBlockWrapper>

@@ -23,7 +23,8 @@ const Box = styled.section`
   color: #000;
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
-    height: 100%;
+    height: auto;
+    min-height: auto;
   }
 `
 

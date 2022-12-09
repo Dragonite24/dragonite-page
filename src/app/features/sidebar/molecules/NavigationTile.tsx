@@ -6,7 +6,7 @@ import { styled, theme } from 'ui/styles'
 import { ReactComponent as Home } from 'ui/icons/home.svg'
 import { ReactComponent as User } from 'ui/icons/user.svg'
 import { ReactComponent as Exp } from 'ui/icons/experience.svg'
-import { ReactComponent as Email } from 'ui/icons/email.svg'
+import { ReactComponent as Smile } from 'ui/icons/smile.svg'
 
 const Wrapper = styled.section<{ isActive: boolean; isPointed: boolean }>`
   display: flex;
@@ -65,7 +65,7 @@ type NavigationTileProps = {
 export const NavigationTile: React.FC<NavigationTileProps> = ({ title, index, isActive, onClick }) => {
   const [isPointed, setIsPointed] = React.useState(false)
 
-  const navIcons = [<Home />, <User />, <Exp />, <Email />]
+  const navIcons = [<Home />, <User />, <Exp />, <Smile />]
 
   const handleMouseEnter = () => {
     setIsPointed(true)

@@ -1,4 +1,4 @@
 export { HeaderSection } from './HeaderSection'
-export { WordleSection as BasedSection } from './BasedSection'
+export { WordleSection } from './WordleSection'
 export { AboutMeSection } from './AboutMeSection'
 export { WorkExperienceSection } from './WorkExperience'
