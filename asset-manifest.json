@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dragonite-page/static/css/main.bda2244d.css",
-    "main.js": "/dragonite-page/static/js/main.1c7095bb.js",
+    "main.js": "/dragonite-page/static/js/main.6f86024e.js",
     "static/media/header-gif.gif": "/dragonite-page/static/media/header-gif.7556e4bcce528bf6ccab.gif",
     "static/media/header-background.webp": "/dragonite-page/static/media/header-background.799caeb621245a0954f3.webp",
     "static/media/Montserrat-Regular.ttf": "/dragonite-page/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
@@ -12,8 +12,8 @@
     "static/media/cases.svg": "/dragonite-page/static/media/cases.785af54460f6dac83ef9c8a6d27d234c.svg",
     "static/media/github.webp": "/dragonite-page/static/media/github.afc2a26e992f25121035.webp",
     "static/media/telegram.webp": "/dragonite-page/static/media/telegram.7ca146b718357ae430da.webp",
-    "static/media/email.svg": "/dragonite-page/static/media/email.87b6f1eb99d1c4014ab6f4044c14c894.svg",
     "static/media/pattern.svg": "/dragonite-page/static/media/pattern.f5fbbb53c57cf4ffcd208af7e376c29d.svg",
+    "static/media/smile.svg": "/dragonite-page/static/media/smile.238c6493ffe8e470aeb574bb666957ca.svg",
     "static/media/user.svg": "/dragonite-page/static/media/user.a146627b9a6bb25196f755d21a9f2edd.svg",
     "index.html": "/dragonite-page/index.html",
     "static/media/home.svg": "/dragonite-page/static/media/home.5e5d25c2443f897a4ffc8b898e57f8f1.svg",
@@ -23,10 +23,10 @@
     "static/media/cloud.webp": "/dragonite-page/static/media/cloud.adb19ad591b5d53f37ce.webp",
     "static/media/experience.svg": "/dragonite-page/static/media/experience.92b93267f0765a5c16f0d826a9c7e641.svg",
     "main.bda2244d.css.map": "/dragonite-page/static/css/main.bda2244d.css.map",
-    "main.1c7095bb.js.map": "/dragonite-page/static/js/main.1c7095bb.js.map"
+    "main.6f86024e.js.map": "/dragonite-page/static/js/main.6f86024e.js.map"
   },
   "entrypoints": [
     "static/css/main.bda2244d.css",
-    "static/js/main.1c7095bb.js"
+    "static/js/main.6f86024e.js"
   ]
 }
