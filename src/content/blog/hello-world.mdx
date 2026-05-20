@@ -1,0 +1,53 @@
+---
+title: Hello World
+description: A starter template for blog posts — frontmatter, prose, code blocks, and MDX components.
+date: 2025-05-20
+tags:
+  - template
+  - mdx
+draft: false
+---
+
+Use this file as a copy-paste template. Each post lives in `src/content/blog/` as `your-slug.mdx` and is compiled at build time into Svelte markup.
+
+## Frontmatter
+
+Required fields:
+
+- **title** — page heading and SEO title
+- **description** — excerpt for cards and meta tags
+- **date** — ISO date (`YYYY-MM-DD`)
+- **tags** — list for the blog index
+
+Optional:
+
+- **draft: true** — hides the post from the index (useful while writing)
+
+## Writing
+
+Paragraphs are plain Markdown. Keep lines readable in git; the build step handles the rest.
+
+> Editorial sites benefit from short paragraphs and clear hierarchy. Let headings do the structural work.
+
+### Code
+
+```ts
+// src/lib/content/posts.ts loads every *.mdx in this folder
+const modules = import.meta.glob('/src/content/blog/*.mdx', { eager: true });
+```
+
+Inline code like `resolvePath('/blog')` works in running text.
+
+### Lists
+
+1. Add a new `.mdx` file beside this one
+2. Fill in frontmatter
+3. Run `pnpm dev` — the post appears automatically
+
+- No manual route registration
+- Slug = filename without extension
+- Body is wrapped in `.prose` on the post page
+
+---
+
+*Duplicate this file, rename it, and start writing.*

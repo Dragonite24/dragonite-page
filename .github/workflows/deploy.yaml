@@ -20,13 +20,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+        env:
+          PUBLIC_SITE_EMAIL: ${{ secrets.PUBLIC_SITE_EMAIL }}
+          PUBLIC_SITE_GITHUB: ${{ secrets.PUBLIC_SITE_GITHUB }}
+          PUBLIC_SITE_TELEGRAM: ${{ secrets.PUBLIC_SITE_TELEGRAM }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
