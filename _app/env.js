@@ -1,0 +1,1 @@
+export const env={"PUBLIC_SITE_TELEGRAM":"http://t.me/dragonite24","PUBLIC_SITE_EMAIL":"semenkolesnikov16@gmail.com","PUBLIC_SITE_GITHUB":"https://github.com/Dragonite24"}
