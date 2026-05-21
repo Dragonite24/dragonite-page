@@ -21,51 +21,30 @@
   </section>
 
   <section class="section" aria-labelledby="links-heading">
-    <h2 id="links-heading" class="font-mono text-muted">Explore</h2>
-    <ul class="home-links">
+    <h2 id="links-heading" class="section-label font-mono text-muted">Explore</h2>
+    <ul class="action-card-list">
       <li>
-        <a
-          href={resolvePath("/portfolio")}
-          class="home-links__item link-underline"
-        >
-          <span class="home-links__label font-heading">Portfolio</span>
-          <span class="home-links__meta font-mono text-muted"
-            >Experience, education &amp; skills</span
-          >
+        <a href={resolvePath("/portfolio")} class="action-card">
+          <span class="action-card__content">
+            <span class="action-card__title font-heading">Portfolio</span>
+            <span class="action-card__meta font-mono text-muted"
+              >Experience, education &amp; skills</span
+            >
+          </span>
+          <span class="action-card__arrow" aria-hidden="true">→</span>
         </a>
       </li>
       <li>
-        <a href={resolvePath("/blog")} class="home-links__item link-underline">
-          <span class="home-links__label font-heading">Blog</span>
-          <span class="home-links__meta font-mono text-muted"
-            >Essays &amp; notes</span
-          >
+        <a href={resolvePath("/blog")} class="action-card">
+          <span class="action-card__content">
+            <span class="action-card__title font-heading">Blog</span>
+            <span class="action-card__meta font-mono text-muted"
+              >Essays &amp; notes</span
+            >
+          </span>
+          <span class="action-card__arrow" aria-hidden="true">→</span>
         </a>
       </li>
     </ul>
   </section>
 </Container>
-
-<style>
-  .home-links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .home-links__item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding-block: var(--space-2);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .home-links__label {
-    font-size: var(--font-size-lg);
-    font-weight: 500;
-  }
-
-  .home-links__meta {
-    font-size: var(--font-size-xs);
-  }
-</style>

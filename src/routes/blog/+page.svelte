@@ -34,9 +34,6 @@
   .blog-list {
     display: flex;
     flex-direction: column;
-  }
-
-  .blog-list :global(.article-card:last-child) {
-    border-bottom: 1px solid var(--color-border);
+    gap: var(--space-2);
   }
 </style>

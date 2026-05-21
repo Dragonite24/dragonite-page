@@ -150,6 +150,100 @@ body {
   margin-top: var(--section-gap);
 }
 
+.section-label {
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Clickable action cards (home explore, blog list, etc.) */
+
+.action-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.action-card:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border-strong));
+  background: var(--color-surface);
+  box-shadow: 0 6px 20px rgba(13, 13, 13, 0.07);
+  transform: translateY(-1px);
+}
+
+.action-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.action-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.action-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: var(--line-height-snug);
+  transition: color var(--transition-fast);
+}
+
+.action-card:hover .action-card__title {
+  color: var(--color-accent);
+}
+
+.action-card__meta {
+  font-size: var(--font-size-xs);
+}
+
+.action-card__arrow {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  color: var(--color-muted);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-base);
+}
+
+.action-card:hover .action-card__arrow {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action-card:hover {
+    transform: none;
+  }
+
+  .action-card:hover .action-card__arrow {
+    transform: none;
+  }
+}
+
 /* Prose / article body */
 
 .prose {

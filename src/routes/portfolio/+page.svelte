@@ -88,12 +88,6 @@
 </Container>
 
 <style>
-  .section-label {
-    padding-bottom: var(--space-1);
-    margin-bottom: var(--space-1);
-    border-bottom: 1px solid var(--color-border);
-  }
-
   .experience-list {
     display: flex;
     flex-direction: column;
