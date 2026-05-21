@@ -1,1 +1,0 @@
-import{s as e}from"./D2KCLupb.js";function t(t){return`${e}${t.startsWith(`/`)?t:`/${t}`}`}export{t};
