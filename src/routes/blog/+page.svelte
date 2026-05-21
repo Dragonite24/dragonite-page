@@ -24,9 +24,9 @@
   </header>
 
   <div class="blog-list" role="feed" aria-label="Blog posts">
-    {#each posts as post (post.slug)}
+    <!-- {#each posts as post (post.slug)}
       <ArticleCard {post} />
-    {/each}
+    {/each} -->
   </div>
 </Container>
 
