@@ -1,1 +1,0 @@
-import{s as e}from"./RzSrH_kC.js";function t(t){return`${e}${t.startsWith(`/`)?t:`/${t}`}`}export{t};
