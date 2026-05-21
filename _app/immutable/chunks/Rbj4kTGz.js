@@ -1,1 +1,0 @@
-import{s as e}from"./K6igru5m.js";function t(t){return`${e}${t.startsWith(`/`)?t:`/${t}`}`}export{t};
