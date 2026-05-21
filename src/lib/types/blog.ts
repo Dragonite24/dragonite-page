@@ -1,23 +1,23 @@
-import type { Component } from 'svelte';
+import type { Component } from "svelte";
 
 export interface BlogPostMeta {
-	slug: string;
-	title: string;
-	description: string;
-	date: string;
-	tags: string[];
-	draft?: boolean;
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  draft?: boolean;
 }
 
 export interface BlogPost extends BlogPostMeta {
-	Component: Component;
+  Component: Component;
 }
 
 /** Frontmatter shape for MDX files in `src/content/blog/`. */
 export interface BlogPostFrontmatter {
-	title: string;
-	description: string;
-	date: string;
-	tags?: string[];
-	draft?: boolean;
+  title: string;
+  description: string;
+  date: string;
+  tags?: string[];
+  draft?: boolean;
 }

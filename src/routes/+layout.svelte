@@ -2,6 +2,7 @@
   import favicon from "$lib/assets/favicon.svg";
   import Footer from "$lib/components/layout/Footer.svelte";
   import Header from "$lib/components/layout/Header.svelte";
+  import SpectrumBackground from "$lib/components/layout/SpectrumBackground.svelte";
   import "$styles/reset.css";
   import "$styles/global.css";
 
@@ -9,9 +10,9 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#fafafa" />
-	<meta name="color-scheme" content="light" />
-	<link rel="icon" href={favicon} />
+  <meta name="theme-color" content="#fafafa" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href={favicon} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     rel="preconnect"
@@ -25,6 +26,8 @@
 </svelte:head>
 
 <a href="#main-content" class="sr-only skip-link">Skip to main content</a>
+
+<SpectrumBackground />
 
 <div class="app">
   <Header />

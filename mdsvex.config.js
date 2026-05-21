@@ -1,6 +1,6 @@
 /** @type {import('mdsvex').MdsvexOptions} */
 const config = {
-	extensions: ['.mdx']
+  extensions: [".mdx"],
 };
 
 export default config;

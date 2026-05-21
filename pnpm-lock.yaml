@@ -20,6 +20,12 @@ importers:
       mdsvex:
         specifier: ^0.12.7
         version: 0.12.7(svelte@5.55.8(@typescript-eslint/types@8.35.1))
+      prettier:
+        specifier: ^3.8.3
+        version: 3.8.3
+      prettier-plugin-svelte:
+        specifier: ^4.0.0
+        version: 4.0.0(prettier@3.8.3)(svelte@5.55.8(@typescript-eslint/types@8.35.1))
       svelte:
         specifier: ^5.55.2
         version: 5.55.8(@typescript-eslint/types@8.35.1)
@@ -418,6 +424,18 @@ packages:
   postcss@8.5.15:
     resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
     engines: {node: ^10 || ^12 || >=14}
+
+  prettier-plugin-svelte@4.0.0:
+    resolution: {integrity: sha512-StoBMZGsfE9ztz1i9ejLhYU2nlP1+FdoWqGCb7Bh7EGVVBW2smCcyoCPxWCdszVdx1SsDiK7n4uAv/YUsHqimQ==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      prettier: ^3.0.0
+      svelte: ^5.0.0
+
+  prettier@3.8.3:
+    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   prism-svelte@0.4.7:
     resolution: {integrity: sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==}
@@ -834,6 +852,13 @@ snapshots:
       nanoid: 3.3.12
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  prettier-plugin-svelte@4.0.0(prettier@3.8.3)(svelte@5.55.8(@typescript-eslint/types@8.35.1)):
+    dependencies:
+      prettier: 3.8.3
+      svelte: 5.55.8(@typescript-eslint/types@8.35.1)
+
+  prettier@3.8.3: {}
 
   prism-svelte@0.4.7: {}
 
